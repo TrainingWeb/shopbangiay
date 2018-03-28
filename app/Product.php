@@ -9,8 +9,8 @@ class Product extends Model
     protected $fillable = [
         'name', 'image', 'price', 'color', 'size', 'gender', 'description', 'brand_id'
     ];
-    
 
+// tetlam 
     public function brands(){
         return $this->belongsTo('App\Brand', 'brand_id');
     }
