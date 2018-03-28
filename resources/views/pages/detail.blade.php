@@ -26,27 +26,27 @@
                     </h6>
                     
                     <div class="form-group row m-0 pb-3">
-                        <div class="col-lg-2 col-md-6 col-12 pb-2 pl-0">
+                        {{--  <div class="col-lg-2 col-md-6 col-12 pb-2 pl-0">
                                 <label for="inputPassword" class="col-form-label font-weight-bold">QUANTITY: </label>
                         </div>
                        
                         <div class="col-lg-1 pl-0 col-3 pb-2">
                             <input type="text" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp"
                                 placeholder="1">
-                        </div>
-                        <div class="col pb-2">
+                        </div>  --}}
+                        <div class="col pb-2 pl-0">
                                 <button type="button" class="btn btn-warning bg-btn text-white rounded-0 py-2"> <i class="fas fa-gift text-white"></i></button>
                                 <button type="button" class="btn py-2 btn-warning bg-btn text-white rounded-0"> ADD TO CARD </button>
                         </div>
                         
                     </div>
 
-                    <a href="#" class="incon-link p-2 bg-white mr-2 border">
+                    {{--  <a href="#" class="incon-link p-2 bg-white mr-2 border">
                         <i class="fas fa-gift text-dark contact-hover"></i>
                     </a>
                     <a href="#" class="incon-link p-2 bg-white border">
                         <i class="fas fa-heart text-dark contact-hover"></i>
-                    </a>
+                    </a>  --}}
                 </div>
             </div>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
