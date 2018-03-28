@@ -23,7 +23,13 @@ Route::resource('/listusers', 'UserController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
 Route::get('/list-product', function () {
 return view('pages.detail');
 });
 
+=======
+
+// Route::get('home')
+// test thu
+>>>>>>> ad85e5cbaba50e4b2448e76b4bf4f49fe87ada87
