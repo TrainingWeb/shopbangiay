@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -11,6 +12,8 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/myStyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/thuystyle.css') }}"/>
+
 
     <title>Trang chu @yield('title')</title>
 </head>

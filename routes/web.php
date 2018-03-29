@@ -35,3 +35,11 @@ Route::get('/home', function(){
     return view('/pages.home', compact('brands'));
 });
 
+
+Route::get('/list-product', function () {
+return view('pages.detail');
+});
+
+Route::get('/contact', function(){
+    return view('pages.contact');
+});
