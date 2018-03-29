@@ -149,7 +149,7 @@
                              {{--  hiện theo list ngang tạm thời chưa đẹp  --}}
                             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="container pl-0">
-                                    <div class="row pl-2">
+                                    <div class="row scroll-list pl-2">
                                         <div class="col-lg-3 col-6 p-1">
                                             <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
                                         </div>
@@ -187,6 +187,241 @@
                                                 <i class="fas fa-heart text-dark contact-hover"></i>
                                             </a>
                                         </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        <div class="col-lg-3 col-6 p-1">
+                                            <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                        </div>
+                                        <div class="col-lg-3 col-6">
+                                             <!-- Show tên và giá tiền sản phẩm -->
+                                             <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                             <h4 class="">
+                                                 <span class="color">$</span> 550</h4>
+                                             <h6 class="pb-1">
+                                                 <small class="">Add To Whishlist</small>
+                                             </h6>
+                                             <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                 <i class="fas fa-gift text-dark contact-hover"></i>
+                                             </a>
+                                             <a href="#" class="incon-link p-2 bg-white">
+                                                 <i class="fas fa-heart text-dark contact-hover"></i>
+                                             </a>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
