@@ -10,6 +10,7 @@ class Product extends Model
         'name', 'image', 'price', 'color', 'size', 'gender', 'description', 'brand_id'
     ];
 
+// tetlam 
     public function brands(){
         return $this->belongsTo('App\Brand', 'brand_id');
     }

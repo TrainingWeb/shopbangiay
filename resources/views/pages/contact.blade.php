@@ -1,6 +1,6 @@
 @extends('layouts.page')
 @section('title','contact')
-{{--  @section('content')  --}}
+@section('content')
 <!-- Phần Content -->
 <div class="content" style="overflow:hidden">
     <div class="row">
@@ -8,7 +8,7 @@
             width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
         <div class="container">
             <h3 class="please text-center pt-3 pb-5">PLEASE CONTACT US!</h3>
-            <div class="contact-form">
+            <div class="contact-form mb-5">
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -47,4 +47,4 @@
     </div>
 </div>
 <!-- Hết phần Content -->
-{{--  @endsection  --}}
+@endsection

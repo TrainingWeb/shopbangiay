@@ -1,5 +1,7 @@
+
 @extends('layouts.page') 
 @section('title', 'home') 
+
 @section('content')
 <!-- Phần Content -->
     <div class="content" style="overflow:hidden">
