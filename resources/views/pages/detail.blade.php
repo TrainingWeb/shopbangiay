@@ -13,14 +13,12 @@
         <div class="container">
             <div class="row py-3">
                 <div class="col-lg-4">
-                    <img class="w-100 pb-3" style="min-height:60vh; object-fit:cover" src="images/shoes4.jpg" alt="">
+                    <img class="w-100 pb-3" style="object-fit:cover; width:300px" src="/images/{{$products->image}}" alt="">
                 </div>
                 <div class="col-lg-8">
-                    <h4 class="title-detail">ADIDAS MALE</h4>
-                    <h4 class=" color title-detail ">$550</h4>
-                    <p>Caelumque opifex pluviaque vultus videre. Indigestaque inminet montes nabataeaque circumdare iners.
-                        Campos unus habitabilis nondum cornua pluviaque. Forma pulsant sectamque supplex aberant! Crescendo
-                        lapidosos litem occiduo triones caelo locavit retinebat aethere.</p>
+                    <h4 class="title-detail">{{$products->name}}</h4>
+                    <h4 class=" color title-detail ">${{$products->price}}</h4>
+                    <p>{{$products->description}}</p>
                     <h6>Availability:
                         <span class="color"> In stock</span>
                     </h6>

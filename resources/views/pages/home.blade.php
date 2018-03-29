@@ -1,15 +1,4 @@
 @extends('layouts.page')
-<<<<<<< HEAD
-
-{{--  Tên trang  --}}
-@section('title', 'chi tiet san pham')
-
-{{--  phần thân login  --}}
-@section('content')
-
-{{--  ............  --}}
-
-=======
 @section('title', 'home')
 
 @section('content')
@@ -67,5 +56,4 @@
         </div>
     </div>
 </div>
->>>>>>> ad85e5cbaba50e4b2448e76b4bf4f49fe87ada87
 @endsection

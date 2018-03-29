@@ -23,15 +23,11 @@
                             Brand
                         </a>
                         <div class="dropdown-menu cover-drop dropdown-menu-right " aria-labelledby="navbarDropdownBrand">
-                            <a class="dropdown-item text-white">
-                                Nike
+                            @foreach($brands as $br)
+                            <a href="/brands/{{$br->id}}" class="dropdown-item text-white">
+                                {{$br->name}}
                             </a>
-                            <a class="dropdown-item text-white" href="#">
-                                Adidas
-                            </a>
-                            <a class="dropdown-item text-white" href="#">
-                                BQ
-                            </a>
+                            @endforeach
                         </div>
                     </li>
                     <li class="nav-item">
