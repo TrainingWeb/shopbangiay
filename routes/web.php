@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Brand;
 Route::get('/', function () {
     return view('index');
 });
@@ -24,22 +23,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/men', 'PageController@getMen');
+Route::get('/male', 'PageController@getMale');
+
+Route::get('/female', 'PageController@getFemale');
+
+Route::get('/adidas', 'PageController@getAdidas');
+
+Route::get('/nike', 'PageController@getNike');
+
+Route::get('/puma', 'PageController@getPuma');
 
 Route::get('/{id}/detail', 'PageController@getDetail');
 
 Route::get('/brands/{id}','PageController@getBrand');
 
-Route::get('/home', function(){
-    $brands = Brand::get();
-    return view('/pages.home', compact('brands'));
-});
+Route::get('/listproduct','PageController@getAll');
 
+Route::get('/about', 'Pagecontroller@getAbout');
 
-Route::get('/list-product', function () {
-return view('pages.detail');
-});
+Route::get('/homepage', 'Pagecontroller@getHomepage');
 
-Route::get('/contact', function(){
-    return view('pages.contact');
-});
+Route::get('/contact', 'Pagecontroller@getContact');

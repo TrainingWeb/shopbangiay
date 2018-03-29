@@ -22,7 +22,10 @@
         </div>
         <div class="col-md-6 form-group">
             <label for="">Gender</label>
-            <input class="form-control" autofocus="" type="text" name="gender">
+            <select class="form-control" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
         </div>
         <div class="col-md-6 form-group">
             <label for="">Description</label>

@@ -1,20 +1,23 @@
 {{-- thừa kế từ trang page.blade.php --}} 
 @extends('layouts.page') {{-- Tên trang --}} 
-@section('title', 'List products')
-{{-- phần thân login --}} 
+@section('title')
+    @foreach($gettitle as $title)
+    {{$title->name}} 
+    @endforeach
+@endsection
+ {{-- phần thân login --}} 
 @section('content')
-
 <!-- Danh sách sản phẩm -->
 <div class="contain">
     <div class="row">
         <div class="col-lg-4 p-0">
             <a href="#">
-                        <img class="w-100" src="images/list-img.jpg" alt="">
+                        <img class="w-100" src="/images/list-img.jpg" alt="">
                     </a>
         </div>
         <div class="col-lg-8">
             <div class="container pt-4">
-                <h1 class="title-contain">MEN</h1>
+                <h1 class="title-contain">PRODUCTS</h1>
                 <!-- Form select catagory -->
                 <div class="form-group d-flex">
                     <select class="form-control col-lg-3 col-6 rounded-0 border-0" id="exampleFormControlSelect1" style="background-color:#ebebeb; font-weight:700;">
@@ -58,7 +61,7 @@
                                                 <a href="#" class="incon-link p-2 bg-white mr-2">
                                                             <i class="fas fa-gift text-dark contact-hover"></i>
                                                         </a>
-                                                    <a href="/{{$product->id}}/detail" class="incon-link p-2 bg-white">
+                                                <a href="/{{$product->id}}/detail" class="incon-link p-2 bg-white">
                                                             <i class="fas fa-heart text-dark contact-hover"></i>
                                                         </a>
                                                 <!-- Show tên và giá tiền sản phẩm -->
@@ -73,50 +76,33 @@
                             </div>
                         </div>
                     </div>
-                    {{-- hiện theo list ngang tạm thời chưa đẹp --}} {{--
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                        aria-labelledby="profile-tab">
+                    {{-- hiện theo list ngang tạm thời chưa đẹp --}}
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="container pl-0">
+                            @foreach($products as $product)
                             <div class="row pl-2">
-                                <div class="col-lg-3 col-6 p-1">
-                                    <img class="w-100" tyle="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
-                                </div>
-                                <div class="col-lg-3 col-6">
-                                    <!-- Show tên và giá tiền sản phẩm -->
-                                    <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
-                                    <h4 class="">
-                                        <span class="color">$</span> 550</h4>
-                                    <h6 class="pb-1">
-                                        <small class="">Add To Whishlist</small>
-                                    </h6>
-                                    <a href="#" class="incon-link p-2 bg-white mr-2">
-                                                 <i class="fas fa-gift text-dark contact-hover"></i>
-                                             </a>
-                                    <a href="#" class="incon-link p-2 bg-white">
-                                                 <i class="fas fa-heart text-dark contact-hover"></i>
-                                             </a>
-                                </div>
                                 <div class="col-lg-3 col-6 p-1 ">
-                                    <img class="w-100" style="height:150px; object-fix:cover" src="images/shoes2.jpg" alt="">
+                                    <img class="w-100" style="height:150px; object-fix:cover" src="/images/{{$product->image}}" alt="">
                                 </div>
                                 <div class="col-lg-3 col-6">
                                     <!-- Show tên và giá tiền sản phẩm -->
-                                    <h5 class="title-card  mt-1">POSURERE AT ULTRICIES </h5>
+                                    <h5 class="title-card  mt-1">{{$product->name}}</h5>
                                     <h4 class="">
-                                        <span class="color">$</span> 550</h4>
+                                        <span class="color">$</span>{{$product->price}}</h4>
                                     <h6 class="pb-1">
-                                        <small class="">Add To Whishlist</small>
+                                        <small class="">{{$product->description}}t</small>
                                     </h6>
                                     <a href="#" class="incon-link p-2 bg-white mr-2">
                                                 <i class="fas fa-gift text-dark contact-hover"></i>
                                             </a>
-                                    <a href="#" class="incon-link p-2 bg-white">
+                                    <a href="/{{$product->id}}/detail" class="incon-link p-2 bg-white">
                                                 <i class="fas fa-heart text-dark contact-hover"></i>
                                             </a>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
