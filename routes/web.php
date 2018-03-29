@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('index');
 });
@@ -23,13 +22,25 @@ Route::resource('/listusers', 'UserController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-<<<<<<< HEAD
-Route::get('/list-product', function () {
-return view('pages.detail');
-});
 
-=======
+Route::get('/male', 'PageController@getMale');
 
-// Route::get('home')
-// test thu
->>>>>>> ad85e5cbaba50e4b2448e76b4bf4f49fe87ada87
+Route::get('/female', 'PageController@getFemale');
+
+Route::get('/adidas', 'PageController@getAdidas');
+
+Route::get('/nike', 'PageController@getNike');
+
+Route::get('/puma', 'PageController@getPuma');
+
+Route::get('/{id}/detail', 'PageController@getDetail');
+
+Route::get('/brands/{id}','PageController@getBrand');
+
+Route::get('/listproduct','PageController@getAll');
+
+Route::get('/about', 'Pagecontroller@getAbout');
+
+Route::get('/homepage', 'Pagecontroller@getHomepage');
+
+Route::get('/contact', 'Pagecontroller@getContact');

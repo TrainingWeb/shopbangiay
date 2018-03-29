@@ -2,6 +2,11 @@
 @section('content')
 <div class="container">
     <a href="/listusers/create">Create new User</a>
+    @if(session('thongbao'))
+        <div class="alert alert-success">
+            {{session('thongbao')}}
+        </div>
+    @endif
     <table class="table table-responsive">
         <tr>
             <td>ID</td>
