@@ -1,7 +1,7 @@
 {{-- thừa kế từ trang page.blade.php --}} 
 @extends('layouts.page') {{-- Tên trang --}} 
 @section('title')
-{{$products[0]->brand->name}}
+{{$gender}}
 @endsection
  {{-- phần thân login --}} 
 @section('content')
@@ -15,7 +15,7 @@
         </div>
         <div class="col-lg-8">
             <div class="container pt-4">
-                <h1 class="title-contain" style="text-transform: uppercase">{{$products[0]->brand->name}}</h1>
+                <h1 class="title-contain" style="text-transform:uppercase">{{$gender}}</h1>
                 <!-- Form select catagory -->
                 <div class="form-group d-flex">
                     <select class="form-control col-lg-3 col-6 rounded-0 border-0" id="exampleFormControlSelect1" style="background-color:#ebebeb; font-weight:700;">

@@ -19,7 +19,7 @@
                 <div class="col-sm-12 col-md-4 list p-0">
                     <div class="centered w-100 text-center">
                         <h1 class="shose">NIKE</h1>
-                        <form action="/brands/6">
+                        <form action="/brands/7">
                         <button type="submit" class="btn btn-outline-secondary shop-now1">SHOP NOW</button>
                         </form>
                     </div>
@@ -28,7 +28,7 @@
                 <div class="col-sm-12 col-md-4  p-0">
                     <div class="centered w-100 text-center">
                         <h1 class="shose">ADIDAS</h1>
-                        <form action="/brands/7">
+                        <form action="/brands/6">
                         <button type="submit" class="btn btn-outline-secondary shop-now1">SHOP NOW</button>
                         </form>
                     </div>
@@ -46,6 +46,7 @@
                 <div class="col-sm-12 col-md-8 p-0">
                     <div class="centered w-100 text-center">
                         <h1 class="shose">MALE</h1>
+                        {{--  <a href="/male?gender=male">da yne</a>  --}}
                         <form action="/male">
                         <button type="submit" class="btn btn-outline-secondary shop-now1">SHOP NOW</button>
                         </form>

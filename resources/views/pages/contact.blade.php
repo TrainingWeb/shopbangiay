@@ -1,5 +1,5 @@
 @extends('layouts.page')
-@section('title','contact')
+@section('title','Contact ')
 @section('content')
 <!-- Phần Content -->
 <div class="content" style="overflow:hidden">
