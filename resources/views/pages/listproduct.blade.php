@@ -94,11 +94,11 @@
                                         <i class="fas fa-heart text-dark contact-hover"></i>
                                 </a>
                                 </div>
-                                        
+                                @endforeach     
                             </div>
                         </div>
                     </div>
-                            @endforeach
+                            
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@
                     <span class="centered-hover">
                         <div class="centered w-100 text-center">
                             <h1 class="shose">NIKE</h1>
-                            <form action="/brands/6">
+                            <form action="/brands/7">
                                 <button type="submit" class="btn btn-outline-secondary shop-now1">SHOP NOW</button>
                             </form>
                         </div>
@@ -45,7 +45,7 @@
                     <span class="centered-hover">
                         <div class="centered w-100 text-center">
                             <h1 class="shose">PUMA</h1>
-                            <form action="/brands/6">
+                            <form action="/brands/8">
                                 <button type="submit" class="btn btn-outline-secondary shop-now1">SHOP NOW</button>
                             </form>
                         </div>
