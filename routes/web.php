@@ -24,4 +24,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('home')
+Route::get('/contact', function(){
+    return view('pages.contact');
+});
+
