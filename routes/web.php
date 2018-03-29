@@ -44,3 +44,4 @@ Route::get('/about', 'Pagecontroller@getAbout');
 Route::get('/homepage', 'Pagecontroller@getHomepage');
 
 Route::get('/contact', 'Pagecontroller@getContact');
+;

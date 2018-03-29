@@ -1,16 +1,16 @@
 <!-- header -->
 <div class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 pl-0">
-            <a class=" logo text-white m-0" href="/homepage">\\\SHOES FASHION</a>
+            <a class=" logo text-white m-0" href="/homepage">\\\SHOES</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse pl-3" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
+                <ul id="nav-header" class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-nav" href="/homepage">Home</a>
+                        <a class="nav-link text-nav active" href="/homepage">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-nav" href="/about">About</a>

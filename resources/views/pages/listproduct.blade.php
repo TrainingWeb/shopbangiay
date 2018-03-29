@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-lg-4 p-0">
             <a href="#">
-                <img class="w-100" src="/images/list-img.jpg" alt="">
+                <img class="w-100" src="/images/list-img.jpg" alt="" style="min-height:100vh; object-fix:cover">
             </a>
         </div>
         <div class="col-lg-8">
