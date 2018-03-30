@@ -1,16 +1,16 @@
 @extends('layouts.app') 
 @section('content')
 <div class="container">
-    <h1>Creating Brand</h1>
+    <h1>Editing Brand</h1>
     <form class="form" action="/listbrands" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="col-md-6 form-group">
             <label for="">Name</label>
-            <input class="form-control" autofocus="" type="text" name="name">
+            <input class="form-control" autofocus="" type="text" name="name" value="{{$brands->name}}">
         </div>
         <div class="col-md-6 form-group">
             <label for="">Slug</label>
-            <input class="form-control" autofocus="" type="text" name="brandslug">
+            <input class="form-control" autofocus="" type="text" name="brandslug" value="{{$brands->brandslug}}">
         </div>
         <br>
         <input class="btn btn-primary" type="submit" name="create" value="CREATE">

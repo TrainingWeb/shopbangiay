@@ -5,7 +5,7 @@
     @if(count($errors) > 0)
     <div class="aler alert-danger">
         @foreach($errors->all() as $err)
-            <li style="padding:20px">{{$err}}</li>
+        <li style="padding:20px">{{$err}}</li>
         @endforeach
     </div>
     @endif
@@ -21,12 +21,8 @@
             <input class="form-control" autofocus="" type="text" name="price" value="{{$products->price}}">
         </div>
         <div class="col-md-6 form-group">
-            <label for="">Color</label>
-            <input class="form-control" autofocus="" type="text" name="color" value="{{$products->color}}">
-        </div>
-        <div class="col-md-6 form-group">
-            <label for="">Size</label>
-            <input class="form-control" autofocus="" type="text" name="size" value="{{$products->size}}">
+            <label for="">Slug</label>
+            <input class="form-control" autofocus="" type="text" name="slug" value="{{$products->productslug}}">
         </div>
         <div class="col-md-6 form-group">
             <label for="">Gender</label>

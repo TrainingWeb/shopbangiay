@@ -44,4 +44,7 @@ Route::get('/about', 'Pagecontroller@getAbout');
 Route::get('/homepage', 'Pagecontroller@getHomepage');
 
 Route::get('/contact', 'Pagecontroller@getContact');
-;
+
+Route::get('/checkout', 'PageController@getCheckout');
+
+Route::get('/customerlogin', 'PageController@getLogin');

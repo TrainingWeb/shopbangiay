@@ -59,7 +59,7 @@
                                                 <a href="#" class="incon-link p-2 bg-white mr-2">
                                                             <i class="fas fa-gift text-dark contact-hover"></i>
                                                         </a>
-                                                <a href="/{{$product->id}}/detail" class="incon-link p-2 bg-white">
+                                                <a href="/{{$product->id}}/slug" class="incon-link p-2 bg-white">
                                                             <i class="fas fa-heart text-dark contact-hover"></i>
                                                         </a>
                                                 <!-- Show tên và giá tiền sản phẩm -->
@@ -93,7 +93,7 @@
                                     <a href="#" class="incon-link p-2 bg-white mr-2">
                                                 <i class="fas fa-gift text-dark contact-hover"></i>
                                             </a>
-                                    <a href="/{{$product->id}}/detail" class="incon-link p-2 bg-white">
+                                    <a href="/{{$product->id}}/slug" class="incon-link p-2 bg-white">
                                                 <i class="fas fa-heart text-dark contact-hover"></i>
                                             </a>
                                 </div>

@@ -20,12 +20,8 @@
             <input class="form-control" autofocus="" type="text" name="price">
         </div>
         <div class="col-md-6 form-group">
-            <label for="">Color</label>
-            <input class="form-control" autofocus="" type="text" name="color">
-        </div>
-        <div class="col-md-6 form-group">
-            <label for="">Size</label>
-            <input class="form-control" autofocus="" type="text" name="size">
+            <label for="">Slug</label>
+            <input class="form-control" autofocus="" type="text" name="productslug">
         </div>
         <div class="col-md-6 form-group">
             <label for="">Gender</label>
@@ -50,7 +46,7 @@
         </select>
         </div>
         <div class="col-md-6 form-group">
-            <input class="btn btn-primary" type="submit" name="edit" value="EDIT">
+            <input class="btn btn-primary" type="submit" name="create" value="CREATE">
         </div>
     </form>
 </div>

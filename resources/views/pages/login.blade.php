@@ -2,7 +2,7 @@
 @extends('layouts.page')
 
 {{--  Tên trang  --}}
-@section('title', 'Login')
+@section('title', 'Login ')
 
 {{--  phần thân login  --}}
 @section('content')

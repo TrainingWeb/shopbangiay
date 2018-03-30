@@ -38,6 +38,7 @@ class BrandController extends Controller
     {
         $brand = New Brand;
         $brand->name = request()->input('name');
+        $brand->brandslug = request()->input('brandslug');
         $brand->save();
         
         return redirect('/listbrands');
@@ -60,9 +61,10 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit($id)
     {
-        //
+        $brands = Brand::find($id);
+        return view('/listbrands.edit', compact('brands'));
     }
 
     /**
@@ -72,9 +74,12 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Request $request, Brand $brand, $id)
     {
-        //
+        $brand = Brand::find($id);
+        $brand->name = request()->input('name');
+        $brand->brandslug = request()->input('brandslug');
+        $brand->update();
     }
 
     /**

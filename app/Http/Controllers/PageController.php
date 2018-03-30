@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Brand;
+use App\User;
 
 class PageController extends Controller
 {
@@ -28,21 +29,24 @@ class PageController extends Controller
     {
         $products = Product::where('id', $Request->id)->first();
         $brands = Brand::get();
-        return view('pages.detail', compact('products', 'brands'));
+        $title = $products->name;
+        return view('pages.detail', compact('products', 'brands', 'title'));
     }
 
     public function getBrand($id)
     {
         $products = Product::where('id_brand', $id)->get();
         $brands = Brand::get();
-        return view('/pages.listproduct', compact('products', 'brands'));
+        $title = $products[0]->brand->name;
+        return view('/pages.listproduct', compact('products', 'brands', 'title'));
     }
 
     public function getAll()
     {
         $products = Product::all();
         $brands = Brand::get();
-        return view('/pages.listproduct', compact('products', 'brands'));
+        $title = 'List Product';
+        return view('/pages.listproduct', compact('products', 'brands', 'title'));
     }
 
     public function getAbout()
@@ -61,5 +65,19 @@ class PageController extends Controller
     {
         $brands = Brand::get();
         return view('/pages.contact', compact('brands'));
+    }
+
+    public function getCheckout()
+    {
+        $brands = Brand::get();
+        return view('/pages.checkout', compact('brands'));
+        
+    }
+
+    public function getLogin()
+    {
+        $users = User::get();
+        $brands = Brand::get();
+        return view('/pages.login', compact('users', 'brands'));
     }
 }

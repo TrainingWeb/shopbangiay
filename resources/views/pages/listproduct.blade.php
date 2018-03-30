@@ -1,7 +1,7 @@
 {{-- thừa kế từ trang page.blade.php --}} 
 @extends('layouts.page') {{-- Tên trang --}} 
 @section('title')
-{{$products[0]->brand->name}}
+    {{$title}}
 @endsection
  {{-- phần thân login --}} 
 @section('content')
@@ -15,7 +15,7 @@
         </div>
         <div class="col-lg-8">
             <div class="container pt-4">
-                <h1 class="title-contain" style="text-transform: uppercase">{{$products[0]->brand->name}}</h1>
+                <h1 class="title-contain" style="text-transform: uppercase">List Products</h1>
                 <!-- Form select catagory -->
                 <div class="form-group d-flex">
                     <select class="form-control col-lg-3 col-6 rounded-0 border-0" id="exampleFormControlSelect1" style="background-color:#ebebeb; font-weight:700;">
@@ -76,9 +76,10 @@
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="container pl-0">
                             <div class="row scroll-list pl-2">
+                            
                                 @foreach($products as $product)
                                 <div class="col-lg-3 col-6 p-1 ">
-                                    <img class="w-100" style="height:150px; object-fix:cover" src="/images/{{$product->image}}" alt="">
+                                    <img class="w-100" style="height:150px; object-fit:cover" src="/images/{{$product->image}}" alt="">
                                 </div>
                                 <div class="col-lg-3 col-6">
                                             <!-- Show tên và giá tiền sản phẩm -->
@@ -94,7 +95,8 @@
                                         <i class="fas fa-heart text-dark contact-hover"></i>
                                 </a>
                                 </div>
-                                @endforeach     
+                                @endforeach  
+                           
                             </div>
                         </div>
                     </div>

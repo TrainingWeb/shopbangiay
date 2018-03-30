@@ -1,5 +1,5 @@
 @extends('layouts.page') 
-@section('title','checkout') 
+@section('title','Check out ') 
 @section('content')
 <!-- Phần Content -->
 <div class="content pb-3" style="overflow:hidden;background-color:#fafafa">
@@ -47,9 +47,11 @@
         </div>
         <div class="row p-0">
             <div class="col-sm-12 col-md-12 col-lg-6 p-0">
-                <button type="button" class="btn continue">
+                <form action="/listproduct">
+                <button type="submit" class="btn continue">
                         <i class="fas fa-backward mr-2"></i >CONTINUE SHOPPING
                     </button>
+                </form>
             </div>
         </div>
     </div>

@@ -6,6 +6,7 @@
         <tr>
             <td>ID</td>
             <td>NAME</td>
+            <td>Slug</td>
             <td>CREATED AT</td>
             <td>UPDATED AT</td>
             <td>EDIT/DELETE</td>
@@ -14,6 +15,7 @@
         <tr>
             <td>{{$brand->id}}</td>
             <td>{{$brand->name}}</td>
+            <td>{{$brand->brandslug}}</td>
             <td>{{$brand->created_at}}</td>
             <td>{{$brand->updated_at}}</td>
             <td>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'name', 'image', 'price', 'color', 'size', 'gender', 'description', 'id_brand'
+        'name', 'image', 'price', 'color', 'size', 'gender', 'description', 'id_brand', 'productslug'
     ];
 
 // tetlam 
