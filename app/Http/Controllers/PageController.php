@@ -73,11 +73,4 @@ class PageController extends Controller
         return view('/pages.checkout', compact('brands'));
         
     }
-
-    public function getLogin()
-    {
-        $users = User::get();
-        $brands = Brand::get();
-        return view('/pages.login', compact('users', 'brands'));
-    }
 }
