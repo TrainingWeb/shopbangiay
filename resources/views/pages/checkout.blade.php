@@ -103,8 +103,7 @@
                             </table>
                         </p>
                     </div>
-                    <div class="card-footer text-center">PROCEED TO CHECKOUT
-                    </div>
+                    <div class="card-footer text-center"><a href="#">PROCEED TO CHECKOUT</a></div>
                     <p class="card-text text-center"><small class="text-muted">Check Out with Mutiple Adreesses</small></p>
                 </div>
             </div>
