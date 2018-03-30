@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Brand;
-use Cart;
+// use Cart;
 
 class PageController extends Controller
 {

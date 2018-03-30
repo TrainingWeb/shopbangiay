@@ -13,8 +13,7 @@
             <td>NAME</td>
             <td>IMAGE</td>
             <td>PRICE</td>
-            <td>COLOR</td>
-            <td>SIZE</td>
+            <td>SLUG</td>
             <td>GENDER</td>
             <td>DESCRIPTION</td>
             <td>BRAND</td>
@@ -29,11 +28,10 @@
             <td><img src="../images/{{$product->image}}" width="200"></td>
             {{--  <td>{{$product->image}}</td>  --}}
             <td>{{$product->price}}</td>
-            <td>{{$product->color}}</td>
-            <td>{{$product->size}}</td>
+            <td>{{$product->productslug}}</td>
             <td>{{$product->gender}}</td>
             <td>{{$product->description}}</td>
-            <td>{{$product->id_brand}}</td>
+            <td>{{$product->brand->name}}</td>
             
             <td>{{$product->created_at}}</td>
             <td>{{$product->updated_at}}</td>

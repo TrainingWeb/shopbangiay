@@ -1,7 +1,7 @@
 {{-- thừa kế từ trang page.blade.php --}} 
 @extends('layouts.page') {{-- Tên trang --}} 
 @section('title')
-{{$products[0]->brand->name}}
+    {{$title}}
 @endsection
  {{-- phần thân login --}} 
 @section('content')
@@ -76,6 +76,7 @@
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="container pl-0">
                             <div class="row scroll-list pl-2">
+                            
                                 @foreach($products as $product)
                                 <div class="col-lg-3 col-6 p-1">
                                     <img class="w-100" style="min-height:150px; object-fit:cover" src="/images/{{$product->image}}" alt="">
@@ -94,7 +95,8 @@
                                         <i class="fas fa-heart text-dark contact-hover"></i>
                                 </a>
                                 </div>
-                                @endforeach     
+                                @endforeach  
+                           
                             </div>
                         </div>
                     </div>

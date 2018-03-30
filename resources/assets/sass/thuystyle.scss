@@ -171,6 +171,14 @@ body{
     letter-spacing: 2px;
     
 }
+.card-footer a{
+    color: #fff;
+    text-decoration: none;
+}
+.card-footer a:hover{
+    color: #eb5b1e;
+    
+}
 .card{
     border: 0;
 }
@@ -200,14 +208,10 @@ body{
     font-weight: bold;
 }
 .submit .btn{
-    background-color:gray; 
+    background-color:#eb5b1e; 
     border-radius: 0;
 }
-.submit .btn:hover{
-    background-color:#eb5b1e; 
-    color: #fff;
-    
-}
+
 .contact-form{
     max-width: 900px;
     margin: 0 auto;

@@ -46,3 +46,6 @@ Route::get('/homepage', 'Pagecontroller@getHomepage');
 Route::get('/contact', 'Pagecontroller@getContact');
 
 Route::get('/cart/{id}/{name}',['as'=>'shoppingCart','user'=>'Pagecontroller@getCart']);
+Route::get('/checkout', 'PageController@getCheckout');
+
+Route::get('/customerlogin', 'PageController@getLogin');
