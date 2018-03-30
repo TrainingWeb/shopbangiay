@@ -12,6 +12,11 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+<<<<<<< HEAD
    .sass('resources/assets/sass/myStyle.scss', 'public/css');
 // mix.js('resources/assets/js/app.js', 'public/js')
 //    .sass('resources/assets/sass/thuystyle.scss', 'public/css');
+=======
+   .sass('resources/assets/sass/myStyle.scss', 'public/css')
+   .sass('resources/assets/sass/thuystyle.scss', 'public/css');
+>>>>>>> 063d5e36faf9e9d1e205b09ec5448ce4d782d39a

@@ -2,6 +2,11 @@
 @section('content')
 <div class="container">
     <a href="/listproducts/create">Create new Products</a>
+    @if(session('thongbao'))
+        <div class="alert alert-success">
+            {{session('thongbao')}}
+        </div>
+    @endif
     <table class="table table-responsive">
         <tr>
             <td>ID</td>

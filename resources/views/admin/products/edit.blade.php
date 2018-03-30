@@ -2,6 +2,13 @@
 @section('content')
 <div class="container">
     <h1>Editing Product</h1>
+    @if(count($errors) > 0)
+    <div class="aler alert-danger">
+        @foreach($errors->all() as $err)
+            <li style="padding:20px">{{$err}}</li>
+        @endforeach
+    </div>
+    @endif
     <form action="/listproducts/{{$products->id}}" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="_method" value="PUT">
@@ -24,8 +31,8 @@
         <div class="col-md-6 form-group">
             <label for="">Gender</label>
             <select class="form-control" name="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                 </select>
         </div>
         <div class="col-md-6 form-group">

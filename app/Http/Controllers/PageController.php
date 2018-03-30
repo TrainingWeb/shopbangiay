@@ -12,50 +12,30 @@ class PageController extends Controller
     {
         $products = Product::where('gender', 'male')->get();
         $brands = Brand::get();
-        return view('/pages.listproduct', compact('products', 'brands'));
+        $gender = $products[0]->gender;
+        return view('/pages.listproductgender', compact('products', 'brands', 'gender'));
     }
 
     public function getFemale()
     {
         $products = Product::where('gender', 'female')->get();
         $brands = Brand::get();
-        return view('/pages.listproduct', compact('products', 'brands'));
+        $gender = $products[0]->gender;
+        return view('/pages.listproductgender', compact('products', 'brands', 'gender'));
     }
-    
-    // public function getAdidas()
-    // {
-    //     $products = Product::where('id_brand', 6)->get();
-    //     $brands = Brand::get();
-    //     return view('/pages.listproduct', compact('products', 'brands'));
-    // }
 
-    // public function getNike()
-    // {
-    //     $products = Product::where('id_brand', 7)->get();
-    //     $brands = Brand::get();
-    //     return view('/pages.listproduct', compact('products', 'brands'));
-    // }
-
-    // public function getPuma()
-    // {
-    //     $products = Product::where('id_brand', 8)->get();
-    //     $brands = Brand::get();
-    //     return view('/pages.listproduct', compact('products', 'brands'));
-    // }
-    
     public function getDetail(Request $Request)
     {
         $products = Product::where('id', $Request->id)->first();
-        $brands = Brand::all();
+        $brands = Brand::get();
         return view('pages.detail', compact('products', 'brands'));
     }
 
     public function getBrand($id)
     {
         $products = Product::where('id_brand', $id)->get();
-        $gettitle = Brand::where('id', $id)->get();
         $brands = Brand::get();
-        return view('/pages.listproduct', compact('products', 'brands', 'gettitle'));
+        return view('/pages.listproduct', compact('products', 'brands'));
     }
 
     public function getAll()

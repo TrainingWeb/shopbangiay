@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'name', 'image', 'price', 'color', 'size', 'gender', 'description', 'brand_id'
+        'name', 'image', 'price', 'color', 'size', 'gender', 'description', 'id_brand'
     ];
 
 // tetlam 
-    public function brands(){
-        return $this->belongsTo('App\Brand', 'brand_id');
+    public function brand(){
+        return $this->belongsTo('App\Brand', 'id_brand');
     }
     public function order_details(){
         return $this->hasMany('App\OrderDetail');

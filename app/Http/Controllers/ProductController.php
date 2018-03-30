@@ -39,6 +39,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required',
+            'price' => 'required',
+            'color' => 'required',
+            'size' => 'required',
+            'gender' => 'required',
+        ],[
+            'name.required' => 'Bạn chưa nhập tên người dùng',
+            'image.required' => 'Bạn chưa chọn ảnh',
+            'price.required' => 'Bạn chưa nhập giá',
+            'color.required' => 'Bạn chưa nhập color',
+            'size.required' => 'Bạn chưa nhập size',
+            'gender.required' => 'Bạn chưa nhập giới tính',
+        ]);
+
         $products = New Product;
         $products->name = request()->input('name');
         $products->price = request()->input('price');
@@ -55,7 +71,7 @@ class ProductController extends Controller
         $products->image = $image;
         $products->id_brand = request()->input('brand');
         $products->save();
-        return redirect('/listproducts');
+        return redirect('/listproducts')->with('thongbao','Just created '. $products->name. '');
     }
 
     /**
@@ -91,6 +107,22 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required',
+            'price' => 'required',
+            'color' => 'required',
+            'size' => 'required',
+            'gender' => 'required',
+        ],[
+            'name.required' => 'Bạn chưa nhập tên người dùng',
+            'image.required' => 'Bạn chưa chọn ảnh',
+            'price.required' => 'Bạn chưa nhập giá',
+            'color.required' => 'Bạn chưa nhập color',
+            'size.required' => 'Bạn chưa nhập size',
+            'gender.required' => 'Bạn chưa nhập giới tính',
+        ]);
+
         $product = Product::find($id);  
         $inputs = $request->all();
         $product->update($inputs);
@@ -105,7 +137,7 @@ class ProductController extends Controller
         // dd($image   );
         $product->image = $image;
         $product->save();
-        return redirect('/listproducts');
+        return redirect('/listproducts')->with('thongbao','Just edited '. $products->name. '');
     }
 
     /**
