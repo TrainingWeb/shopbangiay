@@ -53,5 +53,6 @@
             <input class="btn btn-primary" type="submit" name="edit" value="EDIT">
         </div>
     </form>
-</div>
+    </div>
 @endsection
+   

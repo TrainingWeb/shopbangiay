@@ -987,7 +987,7 @@ window.Vue = __webpack_require__(35);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+console.log('app js here');
 Vue.component('example-component', __webpack_require__(38));
 
 var app = new Vue({

@@ -14,7 +14,7 @@
             </a>
         </div>
         <div class="col-lg-8">
-            <div class="container pt-4">
+            <div class="container pt-4 pb-5">
                 <h1 class="title-contain" style="text-transform: uppercase">{{$products[0]->brand->name}}</h1>
                 <!-- Form select catagory -->
                 <div class="form-group d-flex">
@@ -47,14 +47,14 @@
                                 @foreach($products as $product)
                                 <div class="col-lg-3 p-1">
                                     <div class="card hover-card">
-                                        <img class="w-100" src="/images/{{$product->image}}" style="height:200px!important; object-fit:cover ; display: block;" alt="">
+                                        <img class="w-100" src="/images/{{$product->image}}" style="min-height:200px!important; object-fit:cover ; display: block;" alt="">
                                         <div class="text-hover d-flex align-self-end">
                                             <div class="align-self-end text-center w-100">
                                                 <h6 class="pb-2">
                                                     <small class="text-white">Add To Whishlist</small>
                                                 </h6>
                                                 <!-- Thêm sản phẩm vào giỏ hàng-->
-                                                <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                <a href="{!! url('cart',[$product->id]) !!}" id="addcart" class="incon-link p-2 bg-white mr-2">
                                                             <i class="fas fa-gift text-dark contact-hover"></i>
                                                         </a>
                                                 <a href="/{{$product->id}}/detail" class="incon-link p-2 bg-white">
@@ -77,10 +77,10 @@
                         <div class="container pl-0">
                             <div class="row scroll-list pl-2">
                                 @foreach($products as $product)
-                                <div class="col-lg-3 col-6 p-1 ">
-                                    <img class="w-100" style="height:150px; object-fix:cover" src="/images/{{$product->image}}" alt="">
+                                <div class="col-lg-3 col-6 p-1">
+                                    <img class="w-100" style="min-height:150px; object-fit:cover" src="/images/{{$product->image}}" alt="">
                                 </div>
-                                <div class="col-lg-3 col-6">
+                                <div class="col-lg-3 col-6 p-1">
                                             <!-- Show tên và giá tiền sản phẩm -->
                                             <!-- Show tên và giá tiền sản phẩm -->
                                 <h5 class="title-card  mt-1">{{$product->name}}</h5>

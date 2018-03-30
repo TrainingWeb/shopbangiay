@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Brand;
+use Cart;
 
 class PageController extends Controller
 {
@@ -61,5 +62,13 @@ class PageController extends Controller
     {
         $brands = Brand::get();
         return view('/pages.contact', compact('brands'));
+    }
+
+
+
+    // 
+    public function getCart($id){
+        $product_byID = Product::where('id',$id)->fist();
+        Cart::add(array('id'=>$id,$id));
     }
 }
