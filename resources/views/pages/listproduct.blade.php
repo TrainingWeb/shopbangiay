@@ -15,16 +15,16 @@
         </div>
         <div class="col-lg-8">
             <div class="container pt-4">
-                <h1 class="title-contain" style="text-transform: uppercase">List Products</h1>
+                <h1 class="title-contain" style="text-transform: uppercase">{{$title}}</h1>
                 <!-- Form select catagory -->
                 <div class="form-group d-flex">
-                    <select class="form-control col-lg-3 col-6 rounded-0 border-0" id="exampleFormControlSelect1" style="background-color:#ebebeb; font-weight:700;">
-                                <option>BRAND</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
+                        <form class="form-inline" action="/search" method="GET">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <label for="" class="sr-only">Put name here</label>
+                                <input type="text" class="form-control" name="name" placeholder="Search here..">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Search</button>
+                        </form>
                     <ul class="nav nav-pills ml-auto float-right justify-content-end" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"aria-selected="true">
@@ -57,7 +57,7 @@
                                                 <a href="#" class="incon-link p-2 bg-white mr-2">
                                                             <i class="fas fa-gift text-dark contact-hover"></i>
                                                         </a>
-                                                <a href="/{{$product->id}}/detail" class="incon-link p-2 bg-white">
+                                                <a href="/{{$product->id}}/{{$product->productslug}}" class="incon-link p-2 bg-white">
                                                             <i class="fas fa-heart text-dark contact-hover"></i>
                                                         </a>
                                                 <!-- Show tên và giá tiền sản phẩm -->
@@ -91,7 +91,7 @@
                                 <a href="#" class="incon-link p-2 bg-white mr-2">
                                         <i class="fas fa-gift text-dark contact-hover"></i>
                                 </a>
-                                <a href="/{{$product->id}}/detail" class="incon-link p-2 bg-white">
+                                <a href="/{{$product->id}}/{{$product->productslug}}" class="incon-link p-2 bg-white">
                                         <i class="fas fa-heart text-dark contact-hover"></i>
                                 </a>
                                 </div>

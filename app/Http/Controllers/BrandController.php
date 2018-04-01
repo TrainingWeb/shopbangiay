@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Product;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -64,7 +65,7 @@ class BrandController extends Controller
     public function edit($id)
     {
         $brands = Brand::find($id);
-        return view('/listbrands.edit', compact('brands'));
+        return view('/admin.brands.edit', compact('brands'));
     }
 
     /**
@@ -74,12 +75,12 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand, $id)
+    public function update(Request $request, $id)
     {
-        $brand = Brand::find($id);
-        $brand->name = request()->input('name');
-        $brand->brandslug = request()->input('brandslug');
-        $brand->update();
+        $brands = Brand::find($id);
+        $inputs = $request->all();
+        $brands->update($inputs);
+        return redirect('/listbrands');
     }
 
     /**

@@ -1,5 +1,5 @@
-@extends('layouts.app') 
-@section('content')
+{{--  @extends('layouts.app') 
+@section('content')  --}}
 <div class="container">
     <a href="/listusers/create">Create new User</a>
     @if(session('thongbao'))
@@ -47,4 +47,4 @@
 </div>
 
 
-@endsection
+{{--  @endsection  --}}

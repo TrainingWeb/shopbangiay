@@ -10,17 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Brand;
-Route::get('/', function () {
-    return view('index');
-});
+
 Route::resource('/listproducts', 'ProductController');
 
 Route::resource('/listbrands', 'BrandController');
 
 Route::resource('/listusers', 'UserController');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -28,15 +25,9 @@ Route::get('/male', 'PageController@getMale');
 
 Route::get('/female', 'PageController@getFemale');
 
-Route::get('/adidas', 'PageController@getAdidas');
-
-Route::get('/nike', 'PageController@getNike');
-
-Route::get('/puma', 'PageController@getPuma');
-
-Route::get('/{id}/detail', 'PageController@getDetail');
-
 Route::get('/brands/{id}','PageController@getBrand');
+
+Route::get('/{id}/{productslug}', 'PageController@getDetail');
 
 Route::get('/listproduct','PageController@getAll');
 
@@ -48,9 +39,13 @@ Route::get('/contact', 'Pagecontroller@getContact');
 
 Route::get('/checkout', 'PageController@getCheckout');
 
-Route::get('/customerlogin', function(){
-    $brands = Brand::get();
-    return view('/pages.login', ['brands'=>$brands]);
-});
+Route::get('/test', 'PageController@getNike');
 
-Route::post('/login', 'AuthController@postLogin')->name('login');
+Route::get('/login', 'PageController@getLogin');
+
+Route::post('/postlogin', 'PageController@postLogin');
+
+Route::get('/search', 'PageController@search');
+
+
+

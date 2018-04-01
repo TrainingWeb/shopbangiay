@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Brand;
 use App\User;
@@ -13,16 +14,16 @@ class PageController extends Controller
     {
         $products = Product::where('gender', 'male')->get();
         $brands = Brand::get();
-        $gender = $products[0]->gender;
-        return view('/pages.listproductgender', compact('products', 'brands', 'gender'));
+        $title = "Male";
+        return view('/pages.listproduct', compact('products', 'brands', 'title'));
     }
 
     public function getFemale()
     {
         $products = Product::where('gender', 'female')->get();
         $brands = Brand::get();
-        $gender = $products[0]->gender;
-        return view('/pages.listproductgender', compact('products', 'brands', 'gender'));
+        $title = "Female";
+        return view('/pages.listproduct', compact('products', 'brands', 'title'));
     }
 
     public function getDetail(Request $Request)
@@ -49,6 +50,17 @@ class PageController extends Controller
         return view('/pages.listproduct', compact('products', 'brands', 'title'));
     }
 
+    public function search()
+    {
+        $name = request()->input('name');
+        $products = Product::where([
+            ['name', 'LIKE', '%'. $name .'%'],
+        ])->get();
+        $title = 'Searchingg...';
+        $brands = Brand::get();
+        return view('/pages.listproduct', compact('products', 'title', 'brands'));
+    }
+
     public function getAbout()
     {
         $brands = Brand::get();
@@ -73,4 +85,26 @@ class PageController extends Controller
         return view('/pages.checkout', compact('brands'));
         
     }
+
+    public function getLogin()
+    {
+        $brands = Brand::get();
+        return view('/pages.login', compact('brands'));
+    }
+    public function postLogin(Request $request)
+    {
+        $login = [
+            'email'=> $request->email,
+            'password'=> $request->password,
+            'role'=> 'admin'
+        ];
+        if(Auth::attempt($login)){
+            return redirect('/listproducts');
+        }else{
+            return redirect('/login')->with('thongbao', 'Dang nhap that bai');
+        }
+    }
+
+    
+
 }

@@ -1,5 +1,5 @@
-@extends('layouts.app') 
-@section('content')
+{{--  @extends('layouts.app') 
+@section('content')  --}}
 <div class="container">
     <a href="/listbrands/create">Create new Brand</a>
     <table class="table table-responsive">
@@ -34,4 +34,4 @@
 </div>
 
 
-@endsection
+{{--  @endsection  --}}

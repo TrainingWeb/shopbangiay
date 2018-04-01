@@ -1,5 +1,5 @@
-@extends('layouts.app') 
-@section('content')
+{{--  @extends('layouts.app') 
+@section('content')  --}}
 <div class="container">
     <h1>Creating User</h1>
     @if(count($errors) > 0)
@@ -48,4 +48,4 @@
         </div>
     </form>
 </div>
-@endsection
+{{--  @endsection  --}}

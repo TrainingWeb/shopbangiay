@@ -1,5 +1,5 @@
-@extends('layouts.app') 
-@section('content')
+{{--  @extends('layouts.app') 
+@section('content')  --}}
 <div class="container">
     <h1>Editing Product</h1>
     @if(count($errors) > 0)
@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-6 form-group">
             <label for="">Slug</label>
-            <input class="form-control" autofocus="" type="text" name="slug" value="{{$products->productslug}}">
+            <input class="form-control" autofocus="" type="text" name="productslug" value="{{$products->productslug}}">
         </div>
         <div class="col-md-6 form-group">
             <label for="">Gender</label>
@@ -51,4 +51,4 @@
         </div>
     </form>
 </div>
-@endsection
+{{--  @endsection  --}}

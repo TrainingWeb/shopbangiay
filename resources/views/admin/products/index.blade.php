@@ -1,11 +1,11 @@
-@extends('layouts.app') 
-@section('content')
+{{--  @extends('layouts.app') 
+@section('content')  --}}
 <div class="container">
     <a href="/listproducts/create">Create new Products</a>
     @if(session('thongbao'))
         <div class="alert alert-success">
             {{session('thongbao')}}
-        </div>
+    </div>
     @endif
     <table class="table table-responsive">
         <tr>
@@ -49,4 +49,4 @@
         @endforeach
     </table>
 </div>
-@endsection
+{{--  @endsection  --}}

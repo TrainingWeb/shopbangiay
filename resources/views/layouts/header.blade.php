@@ -72,7 +72,7 @@
                     </div>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-nav" href="/customerlogin">Login
+                    <a class="nav-link text-nav" href="/login">Login
                             <span class="sr-only">(current)</span>
                         </a>
                 </li>

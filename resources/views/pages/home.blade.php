@@ -22,8 +22,8 @@
                     <img src="images/2.jpg" class="w-100" 1 style="object-fit:cover ; height:50vh">
                     <span class="centered-hover">
                         <div class="centered w-100 text-center">
-                            <h1 class="shose">NIKE</h1>
-                            <form action="/brands/1">
+                            <h1 class="shose">{{$brands[0]->name}}</h1>
+                            <form action="/brands/{{$brands[0]->id}}">
                                 <button type="submit" class="btn btn-outline-secondary shop-now1">SHOP NOW</button>
                             </form>
                         </div>
@@ -33,8 +33,8 @@
                     <img src="images/1.jpg" class="w-100" 1 style="object-fit:cover ; height:50vh">
                     <span class="centered-hover">
                         <div class="centered w-100 text-center">
-                            <h1 class="shose">ADIDAS</h1>
-                            <form action="/brands/2">
+                                <h1 class="shose">{{$brands[1]->name}}</h1>
+                                <form action="/brands/{{$brands[1]->id}}">
                                 <button type="submit" class="btn btn-outline-secondary shop-now1">SHOP NOW</button>
                             </form>
                         </div>
@@ -44,8 +44,8 @@
                     <img src="images/3.jpg" class="w-100" 1 style="object-fit:cover ; height:50vh">
                     <span class="centered-hover">
                         <div class="centered w-100 text-center">
-                            <h1 class="shose">PUMA</h1>
-                            <form action="/brands/3">
+                                <h1 class="shose">{{$brands[2]->name}}</h1>
+                                <form action="/brands/{{$brands[2]->id}}">
                                 <button type="submit" class="btn btn-outline-secondary shop-now1">SHOP NOW</button>
                             </form>
                         </div>
@@ -72,7 +72,6 @@
                             </form>
                         </div>
                     </span>
-                    
                 </div>
             </div>
         </div>

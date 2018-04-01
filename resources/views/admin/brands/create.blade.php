@@ -1,5 +1,5 @@
-@extends('layouts.app') 
-@section('content')
+{{--  @extends('layouts.app') 
+@section('content')  --}}
 <div class="container">
     <h1>Creating Brand</h1>
     <form class="form" action="/listbrands" method="POST">
@@ -16,4 +16,4 @@
         <input class="btn btn-primary" type="submit" name="create" value="CREATE">
     </form>
 </div>
-@endsection
+{{--  @endsection  --}}

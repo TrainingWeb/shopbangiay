@@ -118,20 +118,18 @@ class ProductController extends Controller
             'gender.required' => 'Bạn chưa nhập giới tính',
         ]);
 
-        $product = Product::find($id);  
+        $products = Product::find($id);  
         $inputs = $request->all();
-        $product->update($inputs);
+        $products->update($inputs);
         $file ;
-        // dd($inputs['image']);
         if($request->hasFile('image'))
         {
             $file = $request->file('image');
             $file->move('./images',$file->getClientOriginalName('image'));
         }
         $image = $file->getClientOriginalName('image');
-        // dd($image   );
-        $product->image = $image;
-        $product->save();
+        $products->image = $image;
+        $products->save();
         return redirect('/listproducts')->with('thongbao','Just edited '. $products->name. '');
     }
 
