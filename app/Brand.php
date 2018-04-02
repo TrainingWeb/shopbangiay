@@ -10,6 +10,6 @@ class Brand extends Model
         'name', 'brandslug'
     ];
     public function products(){
-        return $this->hasMany('App\Product');
+        return $this->hasMany('App\Product', 'id_brand');
     }
 }

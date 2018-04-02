@@ -39,40 +39,44 @@
                             <span class="text-dark ml-2">2</span>
                         </a>
                     <div class="dropdown-menu cover-drop dropdown-menu-right " aria-labelledby="navbarDropdown">
+
                         <div class="dropdown-item">
-                            <span class="text-white">Card Subtotal</span>
-                            <span class="float-right text-white">$750.00</span>
+                            <span class="text-white">Card Subtotal</span> {{-- <span class="float-right text-white"></span>                            --}}
                         </div>
                         <div class="dropdown-item">
                             <form action="/checkout">
                                 <button type="submit" class="btn btn-warning bg-btn col-12 rounded-0">GO TO CHECKOUT</button>
                             </form>
                         </div>
-                        <a class="dropdown-item" href="#">
+                        @if(Session::has('cart')) @foreach($product_cart as $product)
+                        <a class="dropdown-item">
                             <div class="media border-bottom border-secondary">
-                                <img class="mr-3 img-media" src="images/bg1.jpg" alt="Generic placeholder image">
+                                <img class="mr-3 img-media" src="/images/{{$product['item']['image']}}" alt="Generic placeholder image">
                                 <div class="media-body">
-                                    <p class="text-white m-0">CLASS APTENT TACITY</p>
-                                    <small class="text-white">$750.00</small>
+                                    <p class="text-white m-0">{{$product['item']['name']}}</p>
+                                    <small class="text-white">${{$product['item']['price']}}</small>
                                     <br>
                                     <small class="text-white">Qty:
-                                            <span class="bg-white text-dark">1</span>
+                                            <span class="bg-white text-dark">{{$product['qty']}}</span>
                                         </small>
                                     <br>
                                     <span class="float-right">
                                             <i class="fas fa-edit mr-2 text-white"></i>
-                                            <i class="fas fa-trash-alt text-muted"></i>
-                                        </span>
+                                            <a href="{{route('deletecart', $product['item']['id'])}}">Delete</a>
+                                            {{-- <i class="fas fa-trash-alt text-muted"></i> --}}
+                                    </span>
                                 </div>
                             </div>
                         </a>
+                        @endforeach @endif
                         <a class="dropdown-item" href="#">
                                 <button type="button" class="btn btn-warning bg-btn col-12 rounded-0">VIEW AND EDIT CART</button>
                             </a>
                     </div>
+
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-nav" href="/login">Login
+                    <a class="nav-link text-nav" href="/logincustomer">Login
                             <span class="sr-only">(current)</span>
                         </a>
                 </li>

@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Brand;
 use App\User;
+use App\Order;
+use App\OrderDetail;
+use Session;
+use App\Cart;
+use App\Providers\AppServiceProvider;
 
 class PageController extends Controller
 {
@@ -79,6 +84,49 @@ class PageController extends Controller
         return view('/pages.contact', compact('brands'));
     }
 
+    public function getLogin()
+    {
+        $brands = Brand::get();
+        return view('/pages.login', compact('brands'));
+    }
+    // public function postLogin(Request $request)
+    // {
+    //     $login = [
+    //         'email'=> $request->email,
+    //         'password'=> $request->password,
+    //     ];
+    //     if(Auth::attempt($login)){
+    //         return redirect('/listproducts');
+    //     }else{
+    //         return redirect('/logincustomer')->with('thongbao', 'Dang nhap that bai');
+    //     }
+    // }
+
+    
+
+    public function addTocart(Request $Request, $id)
+    {
+        $product = Product::find($id);
+        $oldCart = Session('cart')?Session::get('cart'):null;
+        $cart = New Cart($oldCart);
+        $cart->add($product, $id);
+        $Request->session()->put('cart',$cart);
+        return redirect()->back();
+    }
+
+    public function deleteCart($id){
+        $oldCart = Session::has('cart')?Session::get('cart'):null;
+        $cart = New Cart($oldCart);
+        $cart->removeItem($id);
+        if(count($cart->items)>0){
+        Session::put('cart',$cart);
+        }
+        else{
+        Session::forget('cart');
+        }
+        return redirect()->back();
+    }
+
     public function getCheckout()
     {
         $brands = Brand::get();
@@ -86,24 +134,32 @@ class PageController extends Controller
         
     }
 
-    public function getLogin()
+    public function postCheckout(Request $Request)
     {
-        $brands = Brand::get();
-        return view('/pages.login', compact('brands'));
-    }
-    public function postLogin(Request $request)
-    {
-        $login = [
-            'email'=> $request->email,
-            'password'=> $request->password,
-            'role'=> 'admin'
-        ];
-        if(Auth::attempt($login)){
-            return redirect('/listproducts');
-        }else{
-            return redirect('/login')->with('thongbao', 'Dang nhap that bai');
+        $cart = Session::get('cart');
+        $user = New User;
+        $user->name = $Request->name;
+        $user->email = $Request->email;
+        $user->address = $Request->address;
+        $user->phone = $Request->phone;
+        $user->save();
+
+        $order = New Order;
+        $order->id_user = $user->id;
+        $order->total = $cart->totalPrice;
+        $order->save();
+
+        foreach($cart['items'] as $key => $value){
+        $order_detail = New OrderDetail;
+        $order_detail->id_order = $order->id;
+        $order_detail->id_product = $product->id;
+        $order_detail->quantity = $value['qty'];
+        $order_detail->unit_price = ($value['price']/$value['qty']);
+        
+        $order_detail->save();
         }
     }
+
 
     
 

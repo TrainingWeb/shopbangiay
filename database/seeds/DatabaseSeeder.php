@@ -13,9 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         DB::table('brands')->insert([
-            ['name'=> 'Adidas' ],
-            ['name'=> 'Nikes' ],
-            ['name'=> 'Puma' ]
+            ['name'=> 'Adidas', 'slug'=> 'adidas' ]
         ]);
         DB::table('products')->insert([
             [

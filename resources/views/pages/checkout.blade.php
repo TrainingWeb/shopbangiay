@@ -18,37 +18,29 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if(Session::has('cart')) 
+                    @foreach($product_cart as $product)
                     <tr class="tr text-center">
-                        <td><img src="images/das1.jpg" width="65" height="90"></th>
-                            <td class="pt-5">ANENEAN ET NULLA</td>
-                            <td class="pt-5" style="font-weight:bold; font-size:20px;">$254.00</td>
+                        <td><img src="/images/{{$product['item']['image']}}" width="65" height="90"></th>
+                            <td class="pt-5">{{$product['item']['name']}}</td>
+                            <td class="pt-5" style="font-weight:bold; font-size:20px;">${{$product['item']['price']}}</td>
                             <td class="pt-5">
-                                <input class="qty" type="number" name="" placeholder="1">
+                                <input class="qty" type="number" name="qty" value="{{$product['qty']}}">
                             </td>
-                            <td class="pt-5" style="font-weight:bold; font-size:20px;">$254.00</td>
+                            <td class="pt-5" style="font-weight:bold; font-size:20px;">${{$product['item']['price']*$product['qty']}}</td>
                             <td class="pt-5">
                                 <button name="delete" class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </td>
                     </tr>
-                    <tr class="tr text-center">
-                        <td><img src="images/das1.jpg" width="65" height="90"></th>
-                            <td class="pt-5">ANENEAN ET NULLA</td>
-                            <td class="pt-5" style="font-weight:bold; font-size:20px;">$254.00</td>
-                            <td class="pt-5">
-                                <input class="qty" type="number" name="" placeholder="1">
-                            </td>
-                            <td class="pt-5" style="font-weight:bold; font-size:20px;">$254.00</td>
-                            <td class="pt-5">
-                                <button name="delete" class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                    </tr>
+                    @endforeach 
+                    @endif
                 </tbody>
             </table>
         </div>
         <div class="row p-0">
             <div class="col-sm-12 col-md-12 col-lg-6 p-0">
                 <form action="/listproduct">
-                <button type="submit" class="btn continue">
+                    <button type="submit" class="btn continue">
                         <i class="fas fa-backward mr-2"></i >CONTINUE SHOPPING
                     </button>
                 </form>
@@ -58,59 +50,63 @@
 </div>
 <div class="content-bottom">
     <div class="container">
-        <div class="row pt-5">
-            <div class="col-sm-12 col-md-6 col-lg-6 p-0">
-                <div class="form-group row">
-                    <label for="example-text-input" class="col-3 col-form-label">Name</label>
-                    <div class="col-9">
-                        <input class="form-control form-check" type="text" value="" id="example-text-input">
+        <form action="/postcheckout" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="row pt-5">
+                <div class="col-sm-12 col-md-6 col-lg-6 p-0">
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-3 col-form-label">Name</label>
+                        <div class="col-9">
+                            <input class="form-control form-check" type="text" value="" name="name" id="example-text-input">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-3 col-form-label">Email Adress</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="email" id="example-search-input">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-3 col-form-label">Adress</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="address" id="example-search-input">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-3 col-form-label">Phone</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="phone" id="example-search-input">
+                        </div>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="example-search-input" class="col-3 col-form-label">Email Adress</label>
-                    <div class="col-9">
-                        <input class="form-control" type="text" value="" id="example-search-input">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="example-search-input" class="col-3 col-form-label">Adress</label>
-                    <div class="col-9">
-                        <input class="form-control" type="text" value="" id="example-search-input">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="example-search-input" class="col-3 col-form-label">Phone</label>
-                    <div class="col-9">
-                        <input class="form-control" type="text" value="" id="example-search-input">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-6">
-                <div class="card mb-3">
-                    <div class="card-header pl-5">CART TOTALS</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <table class="table ">
-                                <tr>
-                                    <td class="total">SUBTOTAL</td>
-                                    <td class="total">$220</td>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="card mb-3">
+                        <div class="card-header pl-5">CART TOTALS</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <table class="table ">
                                     <tr>
-                                        <td class="total">SHIPPING(FLAT RATE - FIXED)</td>
-                                        <td class="total">$10</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="total">ODER TOTAL</td>
-                                        <td class="total">$230</td>
-                                    </tr>
-                            </table>
-                        </p>
+                                        <td class="total">SUBTOTAL</td>
+                                        <td class="total">${{$product['item']['price']*$product['qty']}}</td>
+                                        <tr>
+                                            <td class="total">SHIPPING(FLAT RATE - FIXED)</td>
+                                            <td class="total">$10</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="total">ODER TOTAL</td>
+                                            <td class="total">${{$product['item']['price']*$product['qty']}}</td>
+                                        </tr>
+                                </table>
+                            </p>
+                        </div>
+                        <button type="submit" class="btn card-footer text-center">PROCEED TO CHECKOUT</button>
+                        <p class="card-text text-center"><small class="text-muted">Check Out with Mutiple Adreesses</small></p>
                     </div>
-                    <div class="card-footer text-center"><a href="#">PROCEED TO CHECKOUT</a></div>
-                    <p class="card-text text-center"><small class="text-muted">Check Out with Mutiple Adreesses</small></p>
                 </div>
+
             </div>
-        </div>
     </div>
+    </form>
 </div>
 <!-- Hết phần Content -->
 @endsection

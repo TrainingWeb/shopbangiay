@@ -54,7 +54,7 @@
                                                     <small class="text-white">Add To Whishlist</small>
                                                 </h6>
                                                 <!-- Thêm sản phẩm vào giỏ hàng-->
-                                                <a href="#" class="incon-link p-2 bg-white mr-2">
+                                                <a href="{{route('addtocart', $product->id)}}" class="incon-link p-2 bg-white mr-2">
                                                             <i class="fas fa-gift text-dark contact-hover"></i>
                                                         </a>
                                                 <a href="/{{$product->id}}/{{$product->productslug}}" class="incon-link p-2 bg-white">
