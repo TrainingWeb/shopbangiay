@@ -234,6 +234,7 @@ p {
 }
 
 .nav-pill-detail.active {
+  background-color: #fafafa !important;
   color: black !important;
 }
 

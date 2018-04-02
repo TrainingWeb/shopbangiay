@@ -200,6 +200,15 @@ body {
   letter-spacing: 2px;
 }
 
+.card-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card-footer a:hover {
+  color: #eb5b1e;
+}
+
 .card {
   border: 0;
 }
@@ -235,13 +244,8 @@ body {
 }
 
 .submit .btn {
-  background-color: gray;
-  border-radius: 0;
-}
-
-.submit .btn:hover {
   background-color: #eb5b1e;
-  color: #fff;
+  border-radius: 0;
 }
 
 .contact-form {

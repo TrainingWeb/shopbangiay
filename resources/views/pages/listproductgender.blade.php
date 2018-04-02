@@ -77,19 +77,19 @@
                     {{-- hiện theo list ngang tạm thời chưa đẹp --}}
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="container pl-0">
-                            @foreach($products as $product)
                             <div class="row pl-2">
+                                @foreach($products as $product)
                                 <div class="col-lg-3 col-6 p-1 ">
-                                    <img class="w-100" style="height:150px; object-fix:cover" src="/images/{{$product->image}}" alt="">
+                                    <img class="w-100" style="height:150px; object-fit:cover" src="/images/{{$product->image}}" alt="">
                                 </div>
                                 <div class="col-lg-3 col-6">
                                     <!-- Show tên và giá tiền sản phẩm -->
                                     <h5 class="title-card  mt-1">{{$product->name}}</h5>
                                     <h4 class="">
                                         <span class="color">$</span>{{$product->price}}</h4>
-                                    <h6 class="pb-1">
+                                    {{--  <h6 class="pb-1">
                                         <small class="">{{$product->description}}t</small>
-                                    </h6>
+                                    </h6>  --}}
                                     <a href="#" class="incon-link p-2 bg-white mr-2">
                                                 <i class="fas fa-gift text-dark contact-hover"></i>
                                             </a>
@@ -97,8 +97,9 @@
                                                 <i class="fas fa-heart text-dark contact-hover"></i>
                                             </a>
                                 </div>
+                                @endforeach
                             </div>
-                            @endforeach
+                          
                         </div>
                     </div>
                 </div>

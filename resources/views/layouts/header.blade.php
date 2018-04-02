@@ -6,7 +6,7 @@
             aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse pl-3" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse pl-3" id="navbarSupportedContent" style="overflow:hidden">
             <ul id="nav-header" class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link text-nav active" href="/homepage">Home</a>

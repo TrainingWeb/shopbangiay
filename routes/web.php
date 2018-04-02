@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Brand;
 Route::get('/', function () {
     return view('index');
 });
@@ -48,4 +49,9 @@ Route::get('/contact', 'Pagecontroller@getContact');
 Route::get('/cart/{id}/{name}',['as'=>'shoppingCart','user'=>'Pagecontroller@getCart']);
 Route::get('/checkout', 'PageController@getCheckout');
 
-Route::get('/customerlogin', 'PageController@getLogin');
+Route::get('/customerlogin', function(){
+    $brands = Brand::get();
+    return view('/pages.login', ['brands'=>$brands]);
+});
+
+Route::post('/login', 'AuthController@postLogin')->name('login');
