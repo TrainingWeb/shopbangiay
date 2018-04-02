@@ -26,9 +26,12 @@
                                 <input class="qty" type="number" name="" placeholder="1">
                             </td>
                             <td class="pt-5" style="font-weight:bold; font-size:20px;">$254.00</td>
+                           
                             <td class="pt-5">
+                                <button name="update" class="btn btn-primary btn-sm" type="submit"><i class="fas fa-pencil-alt"></i></button>
                                 <button name="delete" class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </td>
+                            
                     </tr>
                     <tr class="tr text-center">
                         <td><img src="images/das1.jpg" width="65" height="90"></th>
@@ -39,6 +42,7 @@
                             </td>
                             <td class="pt-5" style="font-weight:bold; font-size:20px;">$254.00</td>
                             <td class="pt-5">
+                                <button name="delete" class="btn btn-primary btn-sm" type="submit"><i class="fas fa-pencil-alt"></i></button>
                                 <button name="delete" class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </td>
                     </tr>
