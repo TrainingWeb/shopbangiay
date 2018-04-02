@@ -36,12 +36,14 @@
                 <li class="nav-item dropdown active">
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-gift"></i>
-                            <span class="text-dark ml-2">2</span>
+                            @if(Session::has('cart'))
+                    <span class="text-dark ml-2">{{Session('cart')->totalQty}}</span>
+                            @endif
                         </a>
                     <div class="dropdown-menu cover-drop dropdown-menu-right " aria-labelledby="navbarDropdown">
-
+                            
                         <div class="dropdown-item">
-                            <span class="text-white">Card Subtotal</span> {{-- <span class="float-right text-white"></span>                            --}}
+                            <span class="text-white">Card Subtotal</span> {{-- <span class="float-right text-white"></span> --}}
                         </div>
                         <div class="dropdown-item">
                             <form action="/checkout">

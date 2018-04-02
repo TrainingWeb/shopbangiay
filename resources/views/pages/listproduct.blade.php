@@ -1,9 +1,9 @@
 {{-- thừa kế từ trang page.blade.php --}} 
 @extends('layouts.page') {{-- Tên trang --}} 
-@section('title')
-    {{$title}}
+@section('title') {{$title}}
 @endsection
- {{-- phần thân login --}} 
+
+{{-- phần thân login --}} 
 @section('content')
 <!-- Danh sách sản phẩm -->
 <div class="contain">
@@ -16,23 +16,30 @@
         <div class="col-lg-8">
             <div class="container pt-4">
                 <h1 class="title-contain" style="text-transform: uppercase">{{$title}}</h1>
+                @if(session('notification'))
+                <div class="alert alert-success">
+                    {{session('notification')}}
+                </div>
+                @endif
                 <!-- Form select catagory -->
                 <div class="form-group d-flex">
-                        <form class="form-inline" action="/search" method="GET">
-                            <div class="form-group mx-sm-3 mb-2">
-                                <label for="" class="sr-only">Put name here</label>
-                                <input type="text" class="form-control" name="name" placeholder="Search here..">
-                            </div>
-                            <button type="submit" class="btn btn-primary mb-2">Search</button>
-                        </form>
+                    <form class="form-inline" action="/search" method="GET">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="" class="sr-only">Put name here</label>
+                            <input type="text" class="form-control" name="name" placeholder="Search here..">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Search</button>
+                    </form>
                     <ul class="nav nav-pills ml-auto float-right justify-content-end" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"aria-selected="true">
+                            <a class="nav-link link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+                                aria-selected="true">
                                     <i class="fas fa-bars"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"aria-selected="false">
+                            <a class="nav-link link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+                                aria-selected="false">
                                     <i class="fas fa-list-ul"></i>
                             </a>
                         </li>
@@ -72,35 +79,35 @@
                             </div>
                         </div>
                     </div>
-                             {{--  hiện theo list ngang tạm thời chưa đẹp  --}}
+                    {{-- hiện theo list ngang tạm thời chưa đẹp --}}
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="container pl-0">
                             <div class="row scroll-list pl-2">
-                            
+
                                 @foreach($products as $product)
                                 <div class="col-lg-3 col-6 p-1 ">
                                     <img class="w-100" style="height:150px; object-fit:cover" src="/images/{{$product->image}}" alt="">
                                 </div>
                                 <div class="col-lg-3 col-6">
-                                            <!-- Show tên và giá tiền sản phẩm -->
-                                            <!-- Show tên và giá tiền sản phẩm -->
-                                <h5 class="title-card  mt-1">{{$product->name}}</h5>
-                                <h4><span class="color">$</span>{{$product->price}}</h4>
-                                <h6 class="pb-1"><small>{{$product->description}}t</small>
-                                </h6>
-                                <a href="#" class="incon-link p-2 bg-white mr-2">
+                                    <!-- Show tên và giá tiền sản phẩm -->
+                                    <!-- Show tên và giá tiền sản phẩm -->
+                                    <h5 class="title-card  mt-1">{{$product->name}}</h5>
+                                    <h4><span class="color">$</span>{{$product->price}}</h4>
+                                    <h6 class="pb-1"><small>{{$product->description}}t</small>
+                                    </h6>
+                                    <a href="#" class="incon-link p-2 bg-white mr-2">
                                         <i class="fas fa-gift text-dark contact-hover"></i>
                                 </a>
-                                <a href="/{{$product->id}}/{{$product->productslug}}" class="incon-link p-2 bg-white">
+                                    <a href="/{{$product->id}}/{{$product->productslug}}" class="incon-link p-2 bg-white">
                                         <i class="fas fa-heart text-dark contact-hover"></i>
                                 </a>
                                 </div>
-                                @endforeach  
-                           
+                                @endforeach
+
                             </div>
                         </div>
                     </div>
-                            
+
                 </div>
             </div>
         </div>

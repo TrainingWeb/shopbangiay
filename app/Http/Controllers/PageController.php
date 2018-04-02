@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
@@ -9,7 +10,6 @@ use App\Brand;
 use App\User;
 use App\Order;
 use App\OrderDetail;
-use Session;
 use App\Cart;
 use App\Providers\AppServiceProvider;
 
@@ -89,21 +89,7 @@ class PageController extends Controller
         $brands = Brand::get();
         return view('/pages.login', compact('brands'));
     }
-    // public function postLogin(Request $request)
-    // {
-    //     $login = [
-    //         'email'=> $request->email,
-    //         'password'=> $request->password,
-    //     ];
-    //     if(Auth::attempt($login)){
-    //         return redirect('/listproducts');
-    //     }else{
-    //         return redirect('/logincustomer')->with('thongbao', 'Dang nhap that bai');
-    //     }
-    // }
-
     
-
     public function addTocart(Request $Request, $id)
     {
         $product = Product::find($id);
@@ -133,7 +119,6 @@ class PageController extends Controller
         return view('/pages.checkout', compact('brands'));
         
     }
-
     public function postCheckout(Request $Request)
     {
         $cart = Session::get('cart');
@@ -148,19 +133,17 @@ class PageController extends Controller
         $order->id_user = $user->id;
         $order->total = $cart->totalPrice;
         $order->save();
-
-        foreach($cart['items'] as $key => $value){
+        
+        foreach($cart->items as $key => $value){
         $order_detail = New OrderDetail;
         $order_detail->id_order = $order->id;
-        $order_detail->id_product = $product->id;
+        $order_detail->id_product = $key;
         $order_detail->quantity = $value['qty'];
         $order_detail->unit_price = ($value['price']/$value['qty']);
         
         $order_detail->save();
         }
+        Session::forget('cart');
+        return redirect('/listproduct')->with('notification','Ordered Successfully. Please continue to purchase !');
     }
-
-
-    
-
 }
