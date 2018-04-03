@@ -10,12 +10,12 @@ class UserController extends Controller
     public function index()
     {
         $users = User::get();
-        return view('/admin.users.index', compact('users'));
+        return view('/contentadmin.users.index', compact('users'));
     }
 
     public function create()
     {
-        return view('/admin.users.create');
+        return view('/contentadmin.users.create');
     }
     
     public function store(Request $Request)
@@ -57,7 +57,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $users = User::find($id);
-        return view('/admin.users.edit', compact('users'));
+        return view('/contentadmin.users.edit', compact('users'));
     }
 
     public function update(Request $Request, $id)
@@ -89,12 +89,5 @@ class UserController extends Controller
 
         return redirect('/listusers')->with('thongbao', 'Just edited '.$users->name. '');
     }
-
-    // public function destroy($id)
-    // {
-    //     $users = User::find($id);
-    //     $users->delete();
-    //     return redirect('/lisusers')->with('thongbao', 'Just deleted '.$users->name. '');
-    // }
     
 }

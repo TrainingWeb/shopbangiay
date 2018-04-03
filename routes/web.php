@@ -59,3 +59,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/{id}/{productslug}', 'PageController@getDetail');
+
+Route::get('/admin', 'AdminController@getIndex');
+
+Route::get('/listorders/{id}/delete', 'OrderController@deleteOrder');
+
+Route::get('/listorders', 'OrderController@getIndex');
+
+Route::get('/listorderdetails', 'OrderDetailController@getIndex');

@@ -16,7 +16,7 @@ class BrandController extends Controller
     public function index()
     {
         $brands = Brand::get();
-        return view('/admin.brands.index', compact('brands'));
+        return view('/contentadmin.brands.index', compact('brands'));
     }
 
     /**
@@ -26,7 +26,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('/admin.brands.create');
+        return view('/contentadmin.brands.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class BrandController extends Controller
         $brand->brandslug = request()->input('brandslug');
         $brand->save();
         
-        return redirect('/listbrands');
+        return redirect('/listbrands')->with('thongbao','Just created '. $brand->name. '');;
     }
 
     /**
@@ -65,7 +65,7 @@ class BrandController extends Controller
     public function edit($id)
     {
         $brands = Brand::find($id);
-        return view('/admin.brands.edit', compact('brands'));
+        return view('/contentadmin.brands.edit', compact('brands'));
     }
 
     /**
@@ -80,7 +80,7 @@ class BrandController extends Controller
         $brands = Brand::find($id);
         $inputs = $request->all();
         $brands->update($inputs);
-        return redirect('/listbrands');
+        return redirect('/listbrands')->with('thongbao','Just edited '. $brands->name. '');
     }
 
     /**

@@ -12,6 +12,20 @@ class OrderDetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function getIndex()
+    {
+        $orderdetails = OrderDetail::get();
+        return view('/contentadmin.orderdetails.index', compact('orderdetails'));
+    }
+
+    public function deleteOrder($id)
+    {
+        $orderdetails = OrderDetail::find($id);
+        $orders->delete();
+        return redirect('/listorderdetails')->with('thongbao', 'Just deleted'.$orderdetails->name.'');
+    }
+
     public function index()
     {
         //
