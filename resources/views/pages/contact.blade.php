@@ -9,34 +9,39 @@
         <div class="container">
             <h3 class="please text-center pt-3 pb-5">PLEASE CONTACT US!</h3>
             <div class="contact-form mb-5">
-                <form>
+                    @if(session('thongbao'))
+                    <div class="alert alert-success">
+                        {{session('thongbao')}}
+                    </div>
+                @endif
+                <form action="{{route('postfeedback')}}" method="get">
                     <div class="form-row">
+                            <div class="form-group col-md-6">
+                                    <label for="inputPassword4">WHAT YOUR NAME?</label>
+                                    <input type="text" class="form-control" name="name" id="inputPassword4" required="" placeholder="">
+                                </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">YOUR REPRESENT ANY COMPANY?</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputPassword4">WHAT YOUR NAME?</label>
-                            <input type="text" class="form-control" id="inputPassword4" placeholder="">
+                            <input type="text" class="form-control" name="company" id="inputEmail4" required="" placeholder="">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">WHAT'S YOUR TELEPHONE NUMBER?</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                            <input type="text" class="form-control" name="phone" id="inputEmail4" required="" placeholder="">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">WHAT'S YOUR EMAIL ADDRESS?</label>
-                            <input type="email" class="form-control" id="inputPassword4" placeholder="">
+                            <input class="form-control" name="email" id="inputPassword4" required="" type="email" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">OPTION CONTACT</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                        <input type="text" class="form-control" name="option" id="inputAddress" required="" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">SUBSTANCE CONTACT</label>
-                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                        <textarea class="form-control" name="content" rows="5" required="" id="comment"></textarea>
                     </div>
                     <div class="submit text-center">
                         <button type="submit" class="btn pt-2">SUBMIT</button>

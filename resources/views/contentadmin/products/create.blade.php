@@ -4,6 +4,14 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
+        {{-- bắt lỗi --}} 
+        @if($errors->any())
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+            <li style="list-style:none">{{$error}}</li>
+            @endforeach
+        </div>
+        @endif {{-- bắt lỗi --}}
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
             <li class="breadcrumb-item active"><a href="/listproducts">Product Manager</a></li>
@@ -14,13 +22,6 @@
             <div class="card-header">
                 <i class="fa fa-table"></i> Creating Product</div>
             <div class="card-body">
-                    @if(count($errors) > 0)
-                    <div class="aler alert-danger">
-                        @foreach($errors->all() as $err)
-                            <li style="padding:20px">{{$err}}</li>
-                        @endforeach
-                    </div>
-                    @endif
                     <form action="/listproducts" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="col-md-6 form-group">

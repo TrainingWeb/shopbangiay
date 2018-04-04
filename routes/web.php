@@ -10,9 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Auth::routes();
+Auth::routes();
 
-// Route::post('/login', 'Auth\LoginController')
+// Route::post('/login', 'Auth\LoginController');
 
 
 Route::resource('/listproducts', 'ProductController');
@@ -33,7 +33,7 @@ Route::get('/listproduct','PageController@getAll');
 
 Route::get('/about', 'Pagecontroller@getAbout');
 
-Route::get('/homepage', 'Pagecontroller@getHomepage');
+Route::get('/', 'Pagecontroller@getHomepage');
 
 Route::get('/contact', 'Pagecontroller@getContact');
 
@@ -67,3 +67,7 @@ Route::get('/listorders/{id}/delete', 'OrderController@deleteOrder');
 Route::get('/listorders', 'OrderController@getIndex');
 
 Route::get('/listorderdetails', 'OrderDetailController@getIndex');
+
+Route::get('/listfeedbacks', 'FeedbackController@getIndex');
+
+Route::get('/postfeedback', 'FeedbackController@add')->name('postfeedback');

@@ -4,6 +4,14 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
+        {{-- bắt lỗi --}} 
+        @if($errors->any())
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+            <li style="list-style:none">{{$error}}</li>
+            @endforeach
+        </div>
+        @endif {{-- bắt lỗi --}}
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
             <li class="breadcrumb-item active"><a href="#">Brand Manager</a></li>

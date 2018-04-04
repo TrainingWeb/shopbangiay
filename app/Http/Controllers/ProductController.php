@@ -41,16 +41,20 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'required',
             'price' => 'required',
             'productslug' => 'required',
             'gender' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'brand' => 'required',
         ],[
-            'name.required' => 'Bạn chưa nhập tên người dùng',
-            'image.required' => 'Bạn chưa chọn ảnh',
-            'price.required' => 'Bạn chưa nhập giá',
-            'productslug.required' => 'Bạn chưa nhập slug',
-            'gender.required' => 'Bạn chưa nhập giới tính',
+            'name.required' => 'Please enter product name',
+            'price.required' => 'Please enter product price',
+            'productslug.required' => 'Please enter product slug',
+            'gender.required' => 'Please enter gender of product',
+            'description.required' => 'Please enter product description',
+            'image.required' => 'Please enter product image',
+            'brand.required' => 'Please enter brand of product',
         ]);
 
         $products = New Product;
@@ -106,16 +110,20 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'productslug' => 'required',
-            'image' => 'required',
             'price' => 'required',
+            'productslug' => 'required',
             'gender' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'brand' => 'required',
         ],[
-            'name.required' => 'Bạn chưa nhập tên người dùng',
-            'productslug.required' => 'Bạn chưa nhập slug',
-            'image.required' => 'Bạn chưa chọn ảnh',
-            'price.required' => 'Bạn chưa nhập giá',
-            'gender.required' => 'Bạn chưa nhập giới tính',
+            'name.required' => 'Please enter product name',
+            'price.required' => 'Please enter product price',
+            'productslug.required' => 'Please enter product slug',
+            'gender.required' => 'Please enter gender of product',
+            'description.required' => 'Please enter product description',
+            'image.required' => 'Please enter product image',
+            'brand.required' => 'Please enter brand of product',
         ]);
 
         $products = Product::find($id);  
@@ -137,6 +145,7 @@ class ProductController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Product  $product
+     * 
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

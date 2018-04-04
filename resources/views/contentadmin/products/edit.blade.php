@@ -3,10 +3,18 @@
 @section('content')
 <div class="content-wrapper">
     <div class="container-fluid">
-        <!-- Breadcrumbs-->         
+        <!-- Breadcrumbs-->  
+        {{-- bắt lỗi --}} 
+        @if($errors->any())
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+            <li style="list-style:none">{{$error}}</li>
+            @endforeach
+        </div>
+        @endif {{-- bắt lỗi --}}       
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item active"><a href="#">Product Manager</a></li>
+            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+            <li class="breadcrumb-item active"><a href="/listproducts">Product Manager</a></li>
             <li class="breadcrumb-item active">Editing Product</li>
             
         </ol>
@@ -46,7 +54,7 @@
                         <input class="form-control" autofocus="" type="file" name="image">
                     </div>
                     <div class="col-md-6 form-group">
-                        <select class="col-md-6 form-control" name="group" value="">
+                        <select class="col-md-6 form-control" name="brand" value="">
                                         @foreach($brands as $brand)
                                     <option value="{{$brand->id}}">{{$brand->name}}</option>
                                         @endforeach

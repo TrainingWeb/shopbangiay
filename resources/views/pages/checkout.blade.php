@@ -45,6 +45,7 @@
             </div>
         </div>
 </div>
+@if(Session::has('cart')) 
 <div class="content-bottom">
     <div class="container">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -53,25 +54,25 @@
                 <div class="form-group row">
                     <label for="example-text-input" class="col-3 col-form-label">Name</label>
                     <div class="col-9">
-                        <input class="form-control form-check" type="text" value="" name="name" id="example-text-input">
+                        <input class="form-control form-check" type="text" value="" name="name" required="" id="example-text-input">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="example-search-input" class="col-3 col-form-label">Email Adress</label>
                     <div class="col-9">
-                        <input class="form-control" type="text" value="" name="email" id="example-search-input">
+                        <input class="form-control" type="email" value="" name="email" required="" id="example-search-input">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="example-search-input" class="col-3 col-form-label">Adress</label>
                     <div class="col-9">
-                        <input class="form-control" type="text" value="" name="address" id="example-search-input">
+                        <input class="form-control" type="text" value="" name="address" required="" id="example-search-input">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="example-search-input" class="col-3 col-form-label">Phone</label>
                     <div class="col-9">
-                        <input class="form-control" type="text" value="" name="phone" id="example-search-input">
+                        <input class="form-control" type="number" value="" name="phone" required="" id="example-search-input">
                     </div>
                 </div>
             </div>
@@ -80,7 +81,8 @@
                     <div class="card-header pl-5">CART TOTALS</div>
                     <div class="card-body">
                         <p class="card-text">
-                            <table class="table ">
+                            <table class="table">
+                                    
                                 <tr>
                                     <td class="total">SUBTOTAL</td>
                                     <td class="total">${{$totalPrice}}</td>
@@ -92,6 +94,7 @@
                                         <td class="total">ODER TOTAL</td>
                                         <td class="total">${{$totalPrice}}</td>
                                     </tr>
+                                    
                             </table>
                         </p>
                     </div>
@@ -99,10 +102,10 @@
                     <p class="card-text text-center"><small class="text-muted">Check Out with Mutiple Adreesses</small></p>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 </form>
+@endif
 <!-- Hết phần Content -->
 @endsection

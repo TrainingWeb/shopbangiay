@@ -94,7 +94,18 @@
                   </li>
               </ul>
             </li>
-            
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Feedback Pages">
+              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseFeedbackPages" data-parent="#feedbackAccordion">
+                  <i class="fa fa-fw fa-sitemap"></i>
+                  <span class="nav-link-text">Feedback Manage</span>
+                </a>
+              <ul class="sidenav-second-level collapse" id="collapseFeedbackPages">
+                <li>
+                  <a href="/listfeedbacks">Show all Feedback</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
       {{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-sitemap"></i>
@@ -132,7 +143,7 @@
             <span class="nav-link-text">Link</span>
           </a>
       </li> --}}
-    </ul>
+    
     <ul class="navbar-nav sidenav-toggler">
       <li class="nav-item">
         <a class="nav-link text-center" id="sidenavToggler">

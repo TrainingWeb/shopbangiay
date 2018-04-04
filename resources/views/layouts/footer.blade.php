@@ -5,7 +5,7 @@
 
                 <p class="mb-0">
                     <span class="color">About us</span> Colection, man, woman, Shop, Contact us</p>
-                <small class="mb-1"> @ CopyRights Reserved by FBOX FASHION </small>
+                <small class="mb-1"> @ CopyRights Reserved by SHOES FASHION </small>
             </div>
             <div class="col-lg-2  col-md-6 col-sm-6">
                 <p class="pt-4 mb-2">Colection, man, woman, Shop, Contact us man, woman, Shop, Contact us</p>

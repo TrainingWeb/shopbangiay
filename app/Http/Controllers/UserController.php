@@ -22,16 +22,18 @@ class UserController extends Controller
     {
         $Request->validate([
             'name' => 'required',
-            'email' => 'required',
             'password' => 'required',
-            'phone' => 'required',
             'address' => 'required',
+            'phone' => 'required',
+            'role' => 'required',
+            'email' => 'required'
         ],[
-            'name.required' => 'Bạn chưa nhập tên người dùng',
-            'email.required' => 'Bạn chưa nhập email',
-            'password.required' => 'Bạn chưa nhập password',
-            'phone.required' => 'Bạn chưa nhập số điện thoại',
-            'address.required' => 'Bạn chưa nhập địa chỉ',
+            'name.required' => 'Please enter name',
+            'password.required' => 'Please enter password',
+            'address.required' => 'Please enter address',
+            'phone.required' => 'Please enter phone number',
+            'role.required' => 'Please enter role',
+            'email.required' => 'Please enter email',
         ]);
         $users = New User;
         $users->name = request()->input('name');
@@ -66,16 +68,18 @@ class UserController extends Controller
 
         $Request->validate([
             'name' => 'required',
-            'email' => 'required',
             'password' => 'required',
-            'phone' => 'required',
             'address' => 'required',
+            'phone' => 'required',
+            'role' => 'required',
+            'email' => 'required'
         ],[
-            'name.required' => 'Bạn chưa nhập tên người dùng',
-            'email.required' => 'Bạn chưa nhập email',
-            'password.required' => 'Bạn chưa nhập password',
-            'phone.required' => 'Bạn chưa nhập số điện thoại',
-            'address.required' => 'Bạn chưa nhập địa chỉ',
+            'name.required' => 'Please enter name',
+            'password.required' => 'Please enter password',
+            'address.required' => 'Please enter address',
+            'phone.required' => 'Please enter phone number',
+            'role.required' => 'Please enter role',
+            'email.required' => 'Please enter email',
         ]);
 
         $users->name = request()->input('name');

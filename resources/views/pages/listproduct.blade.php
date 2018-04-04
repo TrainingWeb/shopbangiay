@@ -62,10 +62,10 @@
                                                 </h6>
                                                 <!-- Thêm sản phẩm vào giỏ hàng-->
                                                 <a href="{{route('addtocart', $product->id)}}" class="incon-link p-2 bg-white mr-2">
-                                                            <i class="fas fa-gift text-dark contact-hover"></i>
+                                                            <i class="fas fa-cart-plus text-dark contact-hover"></i>
                                                         </a>
                                                 <a href="/{{$product->id}}/{{$product->productslug}}" class="incon-link p-2 bg-white">
-                                                            <i class="fas fa-heart text-dark contact-hover"></i>
+                                                            <i class="fas fa-info-circle text-dark contact-hover"></i>
                                                         </a>
                                                 <!-- Show tên và giá tiền sản phẩm -->
                                                 <h6 class="mt-3 title-card text-white">{{$product->name}}</h6>
@@ -95,11 +95,11 @@
                                     <h4><span class="color">$</span>{{$product->price}}</h4>
                                     <h6 class="pb-1"><small>{{$product->description}}t</small>
                                     </h6>
-                                    <a href="#" class="incon-link p-2 bg-white mr-2">
+                                    <a href="{{route('addtocart', $product->id)}}" class="incon-link p-2 bg-white mr-2">
                                         <i class="fas fa-gift text-dark contact-hover"></i>
                                 </a>
                                     <a href="/{{$product->id}}/{{$product->productslug}}" class="incon-link p-2 bg-white">
-                                        <i class="fas fa-heart text-dark contact-hover"></i>
+                                        <i class="fas fa-info text-dark contact-hover"></i>
                                 </a>
                                 </div>
                                 @endforeach

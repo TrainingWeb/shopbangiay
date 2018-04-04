@@ -37,6 +37,14 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'brandslug' => 'required'
+        ],[
+            'name.required' => 'Please enter name',
+            'brandslug.required' => 'Please enter slug'
+        ]);
+
         $brand = New Brand;
         $brand->name = request()->input('name');
         $brand->brandslug = request()->input('brandslug');
@@ -77,6 +85,14 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'brandslug' => 'required'
+        ],[
+            'name.required' => 'Please enter name',
+            'brandslug.required' => 'Please enter slug'
+        ]);
+
         $brands = Brand::find($id);
         $inputs = $request->all();
         $brands->update($inputs);
@@ -94,6 +110,6 @@ class BrandController extends Controller
         $brands = Brand::find($id);
         $brands->delete();
 
-        return redirect('/listbrands');
+        return redirect('/listbrands')->with('thongbao', 'Just deleted '. $brands->name.'');
     }
 }
