@@ -12,9 +12,22 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function getIndex()
+    {
+        $orders = Order::get();
+        return view('/contentadmin.orders.index', compact('orders'));
+    }
+
+    public function deleteOrder($id)
+    {
+        $orders = Order::find($id);
+        $orders->delete();
+        return redirect('/listorders')->with('thongbao', 'Just deleted'.$orders->name.'');
+    }
     public function index()
     {
-        //
+        
     }
 
     /**

@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
-        return view('admin.products.index', compact('products'));
+        return view('contentadmin.products.index', compact('products'));
     }
 
     /**
@@ -28,7 +28,7 @@ class ProductController extends Controller
     {
         $products = Product::get();
         $brands = Brand::get();
-        return view('admin.products.create', compact('products','brands'));
+        return view('contentadmin.products.create', compact('products','brands'));
     }
 
     /**
@@ -92,7 +92,7 @@ class ProductController extends Controller
     {
         $products = Product::find($id);
         $brands = Brand::get();
-        return view('admin.products.edit', ['products'=>$products, 'brands'=>$brands]);
+        return view('contentadmin.products.edit', ['products'=>$products, 'brands'=>$brands]);
     }
 
     /**

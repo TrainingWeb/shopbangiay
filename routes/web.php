@@ -54,4 +54,16 @@ Route::get('/customerlogin', function(){
     return view('/pages.login', ['brands'=>$brands]);
 });
 
+<<<<<<< HEAD
 Route::post('/login', 'AuthController@postLogin')->name('login');
+=======
+Route::get('/{id}/{productslug}', 'PageController@getDetail');
+
+Route::get('/admin', 'AdminController@getIndex');
+
+Route::get('/listorders/{id}/delete', 'OrderController@deleteOrder');
+
+Route::get('/listorders', 'OrderController@getIndex');
+
+Route::get('/listorderdetails', 'OrderDetailController@getIndex');
+>>>>>>> 02635901fa4cbed63adab75765aa0a657e20da7a
