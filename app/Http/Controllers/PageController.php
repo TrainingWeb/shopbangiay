@@ -32,10 +32,10 @@ class PageController extends Controller
         return view('/pages.listproduct', compact('products', 'brands', 'title'));
     }
 
-    public function getDetail(Request $Request)
+    public function getDetail($productlug, $id)
     {
-        $products = Product::where('id', $Request->id)->first();
-        $comments = Comment::where('id_product', $Request->id)->get();
+        $products = Product::where('id', $id)->first();
+        $comments = Comment::where('id_product', $id)->get();
         $brands = Brand::get();
         $title = $products->name;
         return view('pages.detail', compact('products', 'brands', 'title', 'comments'));

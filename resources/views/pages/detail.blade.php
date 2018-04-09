@@ -13,7 +13,7 @@
             </div>
             <div class="col-lg-8">
                 <h4 class="title-detail">{{$products->name}}</h4>
-                <h4 class=" color title-detail ">${{$products->price}}</h4>
+                <h4 class=" color title-detail ">${{number_format($products->price)}}</h4>
                 <p>{{$products->description}}</p>
                 <h6>Availability:
                     <span class="color"> In stock</span>

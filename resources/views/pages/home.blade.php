@@ -5,7 +5,7 @@
 <div class="content" style="overflow:hidden">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6 list p-0">
-            <img src="images/list-pro.jpg" class="w-100" style="object-fit:cover;height:100vh">
+            <img src="images/shoe1.jpg" class="w-100" style="object-fit:cover;height:100vh">
             <span class="centered-hover">
                 <div class="centered w-100 text-center">
                     <h1 class="shosee display-3 font-weight-bold mt-3 ">SHOES</h1>

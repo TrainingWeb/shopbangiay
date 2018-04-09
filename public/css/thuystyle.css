@@ -16,6 +16,8 @@ body {
 
 .centered .fashion {
   font-size: 23px;
+  color: #fff;
+  text-shadow: 2px 2px 2px;
 }
 
 .shop-now {
@@ -44,14 +46,16 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   font-size: 30px;
-  color: gainsboro;
+  text-shadow: 3px 3px 3px;
+  color: #721c24;
 }
 
 .centered .shosee {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   font-size: 50px;
-  color: darkslategrey;
+  color: #ffffff;
+  text-shadow: 3px 3px 3px;
 }
 
 .centered .shop-now1 {
