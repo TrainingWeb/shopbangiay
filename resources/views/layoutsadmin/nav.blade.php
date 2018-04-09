@@ -12,19 +12,20 @@
             <span class="nav-link-text">Dashboard</span>
           </a>
       </li>
-      {{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+      {{--
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
         <a class="nav-link" href="charts.html">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Charts</span>
           </a>
-      </li> --}}
-      {{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+      </li> --}} {{--
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
         <a class="nav-link" href="tables.html">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Tables</span>
           </a>
-      </li> --}}
-      {{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+      </li> --}} {{--
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Components</span>
@@ -53,97 +54,98 @@
         </ul>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Product Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProductPages" data-parent="#productAccordion">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProductPages" data-parent="#productAccordion">
               <i class="fa fa-fw fa-sitemap"></i>
               <span class="nav-link-text">Product Manage</span>
             </a>
-          <ul class="sidenav-second-level collapse" id="collapseProductPages">
-            <li>
-              <a href="/listproducts">Show all Product</a>
-            </li>
-            <li>
-              <a href="/listproducts/create">Create new Product</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="User Pages">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUserPages" data-parent="#userAccordion">
-                <i class="fa fa-fw fa-sitemap"></i>
-                <span class="nav-link-text">User Manage</span>
-              </a>
-            <ul class="sidenav-second-level collapse" id="collapseUserPages">
-              <li>
-                <a href="/listusers">Show all User</a>
-              </li>
-              <li>
-                <a href="/listusers/create">Create new User</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Order Pages">
-              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseOrderPages" data-parent="#orderAccordion">
-                  <i class="fa fa-fw fa-sitemap"></i>
-                  <span class="nav-link-text">Order Manage</span>
-                </a>
-              <ul class="sidenav-second-level collapse" id="collapseOrderPages">
-                <li>
-                  <a href="/listorders">Show all Order</a>
-                </li>
-                <li>
-                    <a href="/listorderdetails">Show all Orderdetails</a>
-                  </li>
-              </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Feedback Pages">
-              <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseFeedbackPages" data-parent="#feedbackAccordion">
-                  <i class="fa fa-fw fa-sitemap"></i>
-                  <span class="nav-link-text">Feedback Manage</span>
-                </a>
-              <ul class="sidenav-second-level collapse" id="collapseFeedbackPages">
-                <li>
-                  <a href="/listfeedbacks">Show all Feedback</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-      {{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Menu Levels</span>
-          </a>
-        <ul class="sidenav-second-level collapse" id="collapseMulti">
+        <ul class="sidenav-second-level collapse" id="collapseProductPages">
           <li>
-            <a href="#">Second Level Item</a>
+            <a href="/listproducts">Show all Product</a>
           </li>
           <li>
-            <a href="#">Second Level Item</a>
-          </li>
-          <li>
-            <a href="#">Second Level Item</a>
-          </li>
-          <li>
-            <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-            <ul class="sidenav-third-level collapse" id="collapseMulti2">
-              <li>
-                <a href="#">Third Level Item</a>
-              </li>
-              <li>
-                <a href="#">Third Level Item</a>
-              </li>
-              <li>
-                <a href="#">Third Level Item</a>
-              </li>
-            </ul>
+            <a href="/listproducts/create">Create new Product</a>
           </li>
         </ul>
       </li>
-      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-        <a class="nav-link" href="#">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="User Pages">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUserPages" data-parent="#userAccordion">
+                <i class="fa fa-fw fa-sitemap"></i>
+                <span class="nav-link-text">User Manage</span>
+              </a>
+        <ul class="sidenav-second-level collapse" id="collapseUserPages">
+          <li>
+            <a href="/listusers">Show all User</a>
+          </li>
+          <li>
+            <a href="/listusers/create">Create new User</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Order Pages">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseOrderPages" data-parent="#orderAccordion">
+                  <i class="fa fa-fw fa-sitemap"></i>
+                  <span class="nav-link-text">Order Manage</span>
+                </a>
+        <ul class="sidenav-second-level collapse" id="collapseOrderPages">
+          <li>
+            <a href="/listorders">Show all Order</a>
+          </li>
+          <li>
+            <a href="/listorderdetails">Show all Orderdetails</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Feedback Pages">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseFeedbackPages" data-parent="#feedbackAccordion">
+                  <i class="fa fa-fw fa-sitemap"></i>
+                  <span class="nav-link-text">Feedback Manage</span>
+                </a>
+        <ul class="sidenav-second-level collapse" id="collapseFeedbackPages">
+          <li>
+            <a href="/listfeedbacks">Show all Feedback</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    {{--
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+      <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-sitemap"></i>
+            <span class="nav-link-text">Menu Levels</span>
+          </a>
+      <ul class="sidenav-second-level collapse" id="collapseMulti">
+        <li>
+          <a href="#">Second Level Item</a>
+        </li>
+        <li>
+          <a href="#">Second Level Item</a>
+        </li>
+        <li>
+          <a href="#">Second Level Item</a>
+        </li>
+        <li>
+          <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
+          <ul class="sidenav-third-level collapse" id="collapseMulti2">
+            <li>
+              <a href="#">Third Level Item</a>
+            </li>
+            <li>
+              <a href="#">Third Level Item</a>
+            </li>
+            <li>
+              <a href="#">Third Level Item</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+      <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Link</span>
           </a>
-      </li> --}}
-    
+    </li> --}}
+
     <ul class="navbar-nav sidenav-toggler">
       <li class="nav-item">
         <a class="nav-link text-center" id="sidenavToggler">

@@ -4,8 +4,7 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
-        {{-- bắt lỗi --}} 
-        @if($errors->any())
+        {{-- bắt lỗi --}} @if($errors->any())
         <div class="alert alert-danger">
             @foreach($errors->all() as $error)
             <li style="list-style:none">{{$error}}</li>

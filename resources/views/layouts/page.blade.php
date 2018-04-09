@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -12,7 +11,7 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/myStyle.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/thuystyle.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/thuystyle.css') }}" />
     <link REL="SHUT ICON" HREF="/images/icon.png">
 
     <title>@yield('title')| Shoes Fashion</title>
@@ -22,10 +21,9 @@
     <div class="app">
     @include('layouts.header')
         <!-- contain -->
-        @yield('content')
-        {{--  đóng content  --}}
+        @yield('content') {{-- đóng content --}}
         <!-- footer -->
-        @include('layouts.footer')
+    @include('layouts.footer')
 
 
         <!-- Optional JavaScript -->

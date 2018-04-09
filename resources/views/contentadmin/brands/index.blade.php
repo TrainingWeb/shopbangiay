@@ -5,9 +5,9 @@
     <div class="container-fluid">
         <!-- Breadcrumbs-->
         @if(session('thongbao'))
-            <div class="alert alert-success">
-                {{session('thongbao')}}
-            </div>
+        <div class="alert alert-success">
+            {{session('thongbao')}}
+        </div>
         @endif
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -16,7 +16,7 @@
             <li class="breadcrumb-item active">Brand Manager</li>
         </ol>
         <!-- Example DataTables Card-->
-        
+
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-table"></i> Data table Brand</div>
@@ -60,7 +60,7 @@
                     </table>
                 </div>
             </div>
-            
-</div>
-</div>
+
+        </div>
+    </div>
 @endsection
