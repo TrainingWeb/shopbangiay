@@ -377,7 +377,6 @@
                           <th>ID</th>
                           <th>Name</th>
                           <th>Address</th>
-                          <th>Password</th>
                           <th>Phone</th>
                           <th>Email</th>
                           <th>Role</th>
@@ -393,10 +392,15 @@
                           <td>{{$user->id}}</td>
                           <td>{{$user->name}}</td>
                           <td>{{$user->address}}</td>
-                          <td>{{$user->password}}</td>
                           <td>{{$user->phone}}</td>
                           <td>{{$user->email}}</td>
-                          <td>{{$user->role}}</td>
+                          <td>
+                          @if($user->role == 1)
+                                Admin
+                          @elseif($user->role == 0)
+                                Customer
+                          @endif
+                          </td>
                           <td>{{$user->created_at}}</td>
                           <td>{{$user->updated_at}}</td>
                           <td>

@@ -28,7 +28,6 @@
                                 <th>Option</th>
                                 <th>Content</th>
                                 <th>DAY CREATED</th>
-                                <th>DAY UPDATED</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,7 +41,6 @@
                                 <td>{{$f->option}}</td>
                                 <td>{{$f->content}}</td>
                                 <td>{{$f->created_at}}</td>
-                                <td>{{$f->updated_at}}</td>
                             </tr>
                             @endforeach
                         </tbody>

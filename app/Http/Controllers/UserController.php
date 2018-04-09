@@ -37,15 +37,16 @@ class UserController extends Controller
         ]);
         $users = New User;
         $users->name = request()->input('name');
-        $users->email = request()->input('email');
-        $users->password = request()->input('password');
-        $users->phone = request()->input('phone');
+        $users->password = bcrypt(request()->input('password'));
         $users->address = request()->input('address');
+        $users->phone = request()->input('phone');
         $users->role = request()->input('role');
+        $users->email = request()->input('email');
 
         $users->save();
 
         return redirect('/listusers')->with('thongbao','Just created '. $users->name. '');
+        // return redirect('/listusers')->with('thongbao','Just created '. $users->name. '');
     }
 
     public function destroy($id)

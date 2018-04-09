@@ -28,9 +28,9 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Slug</th>
+                                <th>Qty Products</th>
                                 <th>DAY CREATED</th>
-                                <th>DAY UPDATED</th>
-                                <th>Edit</th>
+                                <th>Manage</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -40,11 +40,11 @@
                                 <td>{{$brand->id}}</td>
                                 <td>{{$brand->name}}</td>
                                 <td>{{$brand->brandslug}}</td>
+                                <td>{{count($brand->products)}}</td>
                                 <td>{{$brand->created_at}}</td>
-                                <td>{{$brand->updated_at}}</td>
                                 <td>
                                     <form style="float:left" action="listbrands/{{$brand->id}}/edit">
-                                        <input class="btn btn-primary" type="submit" value="EDIT">
+                                        <input class="btn btn-primary" type="submit" value="Manage">
                                     </form>
                                 </td>
                                 <td>

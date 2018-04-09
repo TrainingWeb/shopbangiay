@@ -4,7 +4,11 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
-        {{-- bắt lỗi --}} @if($errors->any())
+        <ol class="breadcrumb">
+            <li><a class="btn btn-success" href="/listbrands/create">Create new Brand</a></li>
+        </ol>
+        {{-- bắt lỗi --}} 
+        @if($errors->any())
         <div class="alert alert-danger">
             @foreach($errors->all() as $error)
             <li style="list-style:none">{{$error}}</li>

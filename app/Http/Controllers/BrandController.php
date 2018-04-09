@@ -15,7 +15,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::get();
+        $brands = Brand::with('products')->get();
         return view('/contentadmin.brands.index', compact('brands'));
     }
 

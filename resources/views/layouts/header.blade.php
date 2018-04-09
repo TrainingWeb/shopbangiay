@@ -60,7 +60,7 @@
                                 <img class="mr-3 img-media " src="/images/{{$product['item']['image']}}" alt="Generic placeholder image">
                                 <div class="media-body">
                                     <p class="text-white m-0">{{$product['item']['name']}}</p>
-                                    <small class="text-white">${{$product['item']['price']}}</small>
+                                    <small class="text-white">${{number_format($product['item']['price'])}}</small>
                                     <br>
                                     <small class="text-white">Qty:
                                             <span class="bg-white text-dark">{{$product['qty']}}</span>
@@ -76,11 +76,27 @@
                     </div>
 
                 </li>
+                
+                @if(Auth::check())
+                <li class="nav-item">
+                        <a class="nav-link text-nav" href="#">Hello !</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    
+                    <a class="nav-link" data-toggle="dropdown" href="#">{{ Auth::user()->name }}</a>
+                    <div class="dropdown-menu cover-drop dropdown-menu-right " aria-labelledby="navbarDropdownBrand">
+                        {{-- <a href="" class="dropdown-item text-white">Logout</a> --}}
+                        {{-- <a class="btn btn-primary dropdown-item text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a> --}}
+                        <a class="btn btn-primary dropdown-item text-white" href="{{route('logoutt')}}">Log out</a>
+                    </div>
+                </li>
+                @else
                 <li class="nav-item ">
                     <a class="nav-link text-nav" href="/logincustomer">Login
                             <span class="sr-only">(current)</span>
                         </a>
                 </li>
+                @endif
             </ul>
         </div>
     </nav>

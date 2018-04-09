@@ -2,6 +2,7 @@
 @extends('layouts.page') {{-- Tên trang --}} 
 @section('title') {{$title}}
 @endsection
+
 {{-- phần thân login --}} 
 @section('content')
 <div class="contain">
@@ -66,9 +67,48 @@
                 caelo locavit retinebat aethere.
             </div>
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                Caelumque opifex pluviaque vultus videre. Indigestaque inminet montes nabataeaque circumdare iners. Campos unus habitabilis
-                nondum cornua pluviaque. Forma pulsant sectamque supplex aberant! Crescendo lapidosos litem occiduo triones
-                caelo locavit retinebat aethere.
+                {{-- comment start --}}
+                @if(session('thongbao'))
+                <div class="alert alert-success">
+                    {{session('thongbao')}}
+                </div>
+                @endif
+                @if(Auth::check())
+                <form action="/comment/{{$products->id}}" method="post" class="form">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <label for="">Write comment</label>
+                    <textarea class="col-md-12" name="content" cols="5" rows="2"></textarea>
+                    <input class="form-control col-md-2 btn btn-primary float-right" type="submit" name="Comment">
+                </form>
+                @endif
+                <div style="clear:both"></div>
+                @foreach($comments as $cm)
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-1 mb-2">
+                            <div class="thumbnail">
+                                <img class="img-responsive user-photo" width="60" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                            </div>
+                            <!-- /thumbnail -->
+                        </div>
+                        <!-- /col-sm-1 -->
+                        <div class="col-sm-11">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <strong>{{$cm->user->name}}</strong> <span class="text-muted">{{$cm->created_at}}</span>
+                                </div>
+                                <div class="panel-body">
+                                    {{$cm->content}}
+                                </div>
+                                <!-- /panel-body -->
+                            </div>
+                            <!-- /panel panel-default -->
+                        </div>
+                        <!-- /col-sm-5 -->
+                    </div>
+                </div>
+                @endforeach
+                {{-- end comment --}}
             </div>
         </div>
     </div>

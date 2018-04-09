@@ -19,7 +19,7 @@
 
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> Data table Product</div>
+            <i class="fa fa-table"></i> Data table Product, Have {{count($products)}} into database</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -29,13 +29,11 @@
                                 <th>Name</th>
                                 <th>Image</th>
                                 <th>Price</th>
-                                <th>Slug</th>
                                 <th>Gender</th>
                                 <th>Description</th>
                                 <th>Brand</th>
                                 <th>Day Created</th>
-                                <th>Day Updated</th>
-                                <th>Edit</th>
+                                <th>Manage</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -43,21 +41,18 @@
                             @foreach($products as $product)
                             <tr>
                                 <td>{{$product->id}}</td>
-                                <td>{{$product->name}}</td>
-                                <td><img src="../images/{{$product->image}}" width="200"></td>
+                                <td><a target="_blank" href="/{{$product->id}}/{{$product->productslug}}"><b>{{$product->name}}</b></a></td>
+                                <td><img src="../images/{{$product->image}}" width="50"></td>
                                 {{--
                                 <td>{{$product->image}}</td> --}}
-                                <td>{{$product->price}}</td>
-                                <td>{{$product->productslug}}</td>
+                                <td>{{number_format($product->price)}}</td>
                                 <td>{{$product->gender}}</td>
-                                <td>{{$product->description}}</td>
+                                <td>{{str_limit($product->description),20,'...'}}</td>
                                 <td>{{$product->brand->name}}</td>
-
                                 <td>{{$product->created_at}}</td>
-                                <td>{{$product->updated_at}}</td>
                                 <td>
                                     <form action="listproducts/{{$product->id}}/edit">
-                                        <input class="btn btn-primary" type="submit" value="EDIT">
+                                        <input class="btn btn-primary" type="submit" value="Manage">
                                     </form>
                                 </td>
                                 <td>

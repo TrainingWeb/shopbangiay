@@ -106,6 +106,17 @@
           </li>
         </ul>
       </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Comment Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseCommentPages" data-parent="#commentAccordion">
+                    <i class="fa fa-fw fa-sitemap"></i>
+                    <span class="nav-link-text">Comment Manage</span>
+                  </a>
+          <ul class="sidenav-second-level collapse" id="collapseCommentPages">
+            <li>
+              <a href="/listcomments">Show all Comment</a>
+            </li>
+          </ul>
+        </li>
     </ul>
     {{--
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
@@ -243,9 +254,16 @@
           </div>
         </form>
       </li>
+      @if(Auth::check())
+      <li style="color:#fff;padding: 9px 5px;" class="nav-item">
+            Hello ! <a href="/listusers">{{ Auth::user()->name }}</a>
+      </li>
+      @endif
       <li class="nav-item">
         <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        <div class="panel-body">
+        </div>
       </li>
     </ul>
   </div>

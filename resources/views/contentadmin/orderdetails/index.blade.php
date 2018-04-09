@@ -26,7 +26,6 @@
                                 <th>ID Order</th>
                                 <th>ID Product/Name Product</th>
                                 <th>DAY CREATED</th>
-                                <th>DAY UPDATED</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +37,6 @@
                                 <td>{{$od->id_order}}</td>
                                 <td>{{$od->id_product}} - {{$od->product->name}}</td>
                                 <td>{{$od->created_at}}</td>
-                                <td>{{$od->updated_at}}</td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="">Description</label>
-                            <input class="form-control" autofocus="" type="text" name="description">
+                            <textarea class="form-control" rows="10" name="description"></textarea>
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="">Image</label>

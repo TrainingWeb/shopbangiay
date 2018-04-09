@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->integer('price');
             $table->string('gender');
-            $table->string('description');
+            $table->longText('description');
             $table->integer('id_brand')->unsigned();
             $table->foreign('id_brand')->references('id')->on('brands')->onDelete('cascade');
             $table->timestamps();

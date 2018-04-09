@@ -12,8 +12,8 @@
         </div>
         @endif {{-- bắt lỗi --}}
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item active"><a href="#">Brand Manager</a></li>
+            <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+            <li class="breadcrumb-item active"><a href="/listbrandspp">Brand Manager</a></li>
             <li class="breadcrumb-item active">Creating Brand</li>
         </ol>
         <!-- Example DataTables Card-->

@@ -28,13 +28,11 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Address</th>
-                                <th>Password</th>
                                 <th>Phone</th>
                                 <th>Email</th>
                                 <th>Role</th>
                                 <th>Day Created</th>
-                                <th>Day Updated</th>
-                                <th>Edit</th>
+                                <th>Manage</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -44,15 +42,13 @@
                                 <td>{{$user->id}}</td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->address}}</td>
-                                <td>{{$user->password}}</td>
                                 <td>{{$user->phone}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->role}}</td>
                                 <td>{{$user->created_at}}</td>
-                                <td>{{$user->updated_at}}</td>
                                 <td>
                                     <form action="listusers/{{$user->id}}/edit">
-                                        <input class="btn btn-primary" type="submit" value="EDIT">
+                                        <input class="btn btn-primary" type="submit" value="Manage">
                                     </form>
                                 </td>
                                 <td>

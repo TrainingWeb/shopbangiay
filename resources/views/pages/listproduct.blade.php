@@ -23,13 +23,13 @@
                 @endif
                 <!-- Form select catagory -->
                 <div class="form-group d-flex">
-                    <form class="form-inline" action="/search" method="GET">
+                    {{-- <form class="form-inline" action="/search" method="GET">
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="" class="sr-only">Put name here</label>
                             <input type="text" class="form-control" name="name" placeholder="Search here..">
                         </div>
                         <button type="submit" class="btn btn-primary mb-2">Search</button>
-                    </form>
+                    </form> --}}
                     <ul class="nav nav-pills ml-auto float-right justify-content-end" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
@@ -64,12 +64,12 @@
                                                 <a href="{{route('addtocart', $product->id)}}" class="incon-link p-2 bg-white mr-2">
                                                             <i class="fas fa-cart-plus text-dark contact-hover"></i>
                                                         </a>
-                                                <a href="/{{$product->id}}/{{$product->productslug}}" class="incon-link p-2 bg-white">
+                                                <a href="/{{$product->productslug}}/{{$product->id}}" class="incon-link p-2 bg-white">
                                                             <i class="fas fa-info-circle text-dark contact-hover"></i>
                                                         </a>
                                                 <!-- Show tên và giá tiền sản phẩm -->
-                                                <h6 class="mt-3 title-card text-white">{{$product->name}}</h6>
-                                                <h4 class="text-white">${{$product->price}}</h4>
+                                                <h6 class="mt-3 title-card text-white"><b style="font-size:20px">{{$product->name}}</b></h6>
+                                                <h4 class="text-white">${{number_format($product->price)}}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -77,6 +77,7 @@
                                 <!-- 1 product-->
                                 @endforeach
                             </div>
+                            {{ $products->links() }}
                         </div>
                     </div>
                     {{-- hiện theo list ngang tạm thời chưa đẹp --}}
@@ -91,20 +92,21 @@
                                 <div class="col-lg-3 col-6">
                                     <!-- Show tên và giá tiền sản phẩm -->
                                     <!-- Show tên và giá tiền sản phẩm -->
-                                    <h5 class="title-card  mt-1">{{$product->name}}</h5>
-                                    <h4><span class="color">$</span>{{$product->price}}</h4>
-                                    <h6 class="pb-1"><small>{{$product->description}}t</small>
+                                    <h5 class="title-card  mt-1"><b style="font-size:20px">{{$product->name}}</b></h5>
+                                    <h4><span class="color">$</span>{{number_format($product->price)}}</h4>
+                                    <h6 class="pb-1"><small>{{str_limit($product->description, '40', '...')}}t</small>
                                     </h6>
                                     <a href="{{route('addtocart', $product->id)}}" class="incon-link p-2 bg-white mr-2">
-                                        <i class="fas fa-gift text-dark contact-hover"></i>
+                                        <i class="fas fa-cart-plus text-dark contact-hover"></i>
                                 </a>
-                                    <a href="/{{$product->id}}/{{$product->productslug}}" class="incon-link p-2 bg-white">
+                                    <a href="/{{$product->productslug}}/{{$product->id}}" class="incon-link p-2 bg-white">
                                         <i class="fas fa-info text-dark contact-hover"></i>
                                 </a>
                                 </div>
                                 @endforeach
 
                             </div>
+                            {{ $products->links() }}
                         </div>
                     </div>
 

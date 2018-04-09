@@ -12,11 +12,36 @@
 */
 Auth::routes();
 
-Route::resource('/listproducts', 'ProductController');
+Route::group(['middleware'=>'adminLogin'], function () {
 
-Route::resource('/listbrands', 'BrandController');
+            Route::get('/admin', 'AdminController@getIndex');
 
-Route::resource('/listusers', 'UserController');
+            Route::resource('/listproducts', 'ProductController');
+
+            Route::get('/listproducts/{id}/show', 'ProductController@show');
+
+            Route::resource('/listbrands', 'BrandController');
+
+            Route::resource('/listusers', 'UserController');
+
+            Route::get('/listorders/{id}/delete', 'OrderController@deleteOrder');
+
+            Route::get('/listorders', 'OrderController@getIndex');
+
+            Route::get('/listorderdetails', 'OrderDetailController@getIndex');
+
+            Route::get('/listfeedbacks', 'FeedbackController@getIndex');
+
+            Route::get('/listcomments', 'CommentController@getIndex');
+
+            Route::get('/deleteComment/{id}', 'CommentController@deleteComment');
+});
+
+Route::get('/logoutt', 'PageController@logout')->name('logoutt');
+
+Route::post('/postuser', 'PageController@postUser')->name('postUser');
+
+Route::get('/postfeedback', 'FeedbackController@add')->name('postfeedback');
 
 Route::get('/male', 'PageController@getMale');
 
@@ -48,16 +73,6 @@ Route::get('/search', 'PageController@search');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/{id}/{productslug}', 'PageController@getDetail');
+Route::get('/{productslug}/{id}', 'PageController@getDetail');
 
-Route::get('/admin', 'AdminController@getIndex');
-
-Route::get('/listorders/{id}/delete', 'OrderController@deleteOrder');
-
-Route::get('/listorders', 'OrderController@getIndex');
-
-Route::get('/listorderdetails', 'OrderDetailController@getIndex');
-
-Route::get('/listfeedbacks', 'FeedbackController@getIndex');
-
-Route::get('/postfeedback', 'FeedbackController@add')->name('postfeedback');
+Route::post('comment/{id}', 'CommentController@postComment')->name('postComment');

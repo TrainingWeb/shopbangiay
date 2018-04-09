@@ -11,13 +11,14 @@ use App\User;
 use App\Order;
 use App\OrderDetail;
 use App\Cart;
+use App\Comment;
 use App\Providers\AppServiceProvider;
 
 class PageController extends Controller
 {
     public function getMale()
     {
-        $products = Product::where('gender', 'male')->get();
+        $products = Product::where('gender', 'male')->paginate(16);
         $brands = Brand::get();
         $title = "Male";
         return view('/pages.listproduct', compact('products', 'brands', 'title'));
@@ -25,7 +26,7 @@ class PageController extends Controller
 
     public function getFemale()
     {
-        $products = Product::where('gender', 'female')->get();
+        $products = Product::where('gender', 'female')->paginate(16);
         $brands = Brand::get();
         $title = "Female";
         return view('/pages.listproduct', compact('products', 'brands', 'title'));
@@ -34,14 +35,15 @@ class PageController extends Controller
     public function getDetail(Request $Request)
     {
         $products = Product::where('id', $Request->id)->first();
+        $comments = Comment::where('id_product', $Request->id)->get();
         $brands = Brand::get();
         $title = $products->name;
-        return view('pages.detail', compact('products', 'brands', 'title'));
+        return view('pages.detail', compact('products', 'brands', 'title', 'comments'));
     }
 
     public function getBrand($id)
     {
-        $products = Product::where('id_brand', $id)->get();
+        $products = Product::where('id_brand', $id)->paginate(16);
         $brands = Brand::get();
         $title = $products[0]->brand->name;
         return view('/pages.listproduct', compact('products', 'brands', 'title'));
@@ -49,7 +51,7 @@ class PageController extends Controller
 
     public function getAll()
     {
-        $products = Product::all();
+        $products = Product::paginate(16);
         $brands = Brand::get();
         $title = 'List Product';
         return view('/pages.listproduct', compact('products', 'brands', 'title'));
@@ -89,6 +91,55 @@ class PageController extends Controller
         $brands = Brand::get();
         return view('/pages.login', compact('brands'));
     }
+
+    public function postLogin(request $request)
+    {
+        if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password]))
+    {
+        return redirect('/admin');
+    }
+        else
+        {
+        return redirect()->back()->with('thongbao', 'Login failed, email or password is not correct !');
+    }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/logincustomer');
+    }
+
+
+    public function postUser(Request $Request)
+    {
+        $Request->validate([
+            'name' => 'required',
+            'password' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+            'role' => 'required',
+            'email' => 'required'
+        ],[
+            'name.required' => 'Please enter name',
+            'password.required' => 'Please enter password',
+            'address.required' => 'Please enter address',
+            'phone.required' => 'Please enter phone number',
+            'role.required' => 'Please enter role',
+            'email.required' => 'Please enter email',
+        ]);
+        $users = New User;
+        $users->name = request()->input('name');
+        $users->password = bcrypt(request()->input('password'));
+        $users->address = request()->input('address');
+        $users->phone = request()->input('phone');
+        $users->role = request()->input('role');
+        $users->email = request()->input('email');
+
+        $users->save();
+
+        return redirect('/logincustomer')->with('success', 'Sign Up Success ! Now, enter your new account here');
+    }
     
     public function addTocart(Request $Request, $id)
     {
@@ -122,15 +173,22 @@ class PageController extends Controller
     public function postCheckout(Request $Request)
     {
         $cart = Session::get('cart');
+        if(!Auth::check())
+        {
         $user = New User;
         $user->name = $Request->name;
         $user->email = $Request->email;
         $user->address = $Request->address;
         $user->phone = $Request->phone;
         $user->save();
+        }
+        else
+        {
+
+        }
 
         $order = New Order;
-        $order->id_user = $user->id;
+        $order->id_user = Auth::user()->id;
         $order->total = $cart->totalPrice;
         $order->save();
         
