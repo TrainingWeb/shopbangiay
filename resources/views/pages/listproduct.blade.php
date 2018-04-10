@@ -10,11 +10,16 @@
     <div class="row">
         <div class="col-lg-4 p-0">
             <a href="#">
-                <img class="w-100" src="/images/list-img.jpg" alt="" style="min-height:100vh; object-fix:cover">
+                <img class="w-100" src="/images/3.jpg" alt="" style="min-height:100vh; object-fix:cover">
             </a>
         </div>
         <div class="col-lg-8">
+
             <div class="container pt-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active">{{$title}}</li>
+                </ol>
                 <h1 class="title-contain" style="text-transform: uppercase">{{$title}}</h1>
                 @if(session('notification'))
                 <div class="alert alert-success">
@@ -23,7 +28,8 @@
                 @endif
                 <!-- Form select catagory -->
                 <div class="form-group d-flex">
-                    {{-- <form class="form-inline" action="/search" method="GET">
+                    {{--
+                    <form class="form-inline" action="/search" method="GET">
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="" class="sr-only">Put name here</label>
                             <input type="text" class="form-control" name="name" placeholder="Search here..">
@@ -64,7 +70,7 @@
                                                 <a href="{{route('addtocart', $product->id)}}" class="incon-link p-2 bg-white mr-2">
                                                             <i class="fas fa-cart-plus text-dark contact-hover"></i>
                                                         </a>
-                                                <a href="/{{$product->productslug}}/{{$product->id}}" class="incon-link p-2 bg-white">
+                                                <a href="/products/{{$product->productslug}}.html" class="incon-link p-2 bg-white">
                                                             <i class="fas fa-info-circle text-dark contact-hover"></i>
                                                         </a>
                                                 <!-- Show tên và giá tiền sản phẩm -->
@@ -99,7 +105,7 @@
                                     <a href="{{route('addtocart', $product->id)}}" class="incon-link p-2 bg-white mr-2">
                                         <i class="fas fa-cart-plus text-dark contact-hover"></i>
                                 </a>
-                                    <a href="/{{$product->productslug}}/{{$product->id}}" class="incon-link p-2 bg-white">
+                                    <a href="/products/{{$product->productslug}}.html" class="incon-link p-2 bg-white">
                                         <i class="fas fa-info text-dark contact-hover"></i>
                                 </a>
                                 </div>

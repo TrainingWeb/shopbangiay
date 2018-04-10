@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Brand;
+use File;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -113,7 +114,7 @@ class ProductController extends Controller
             'productslug' => 'required',
             'gender' => 'required',
             'description' => 'required',
-            'image' => 'required',
+            // 'image' => 'required',
             'brand' => 'required',
         ],[
             'name.required' => 'Please enter product name',
@@ -121,7 +122,7 @@ class ProductController extends Controller
             'productslug.required' => 'Please enter product slug',
             'gender.required' => 'Please enter gender of product',
             'description.required' => 'Please enter product description',
-            'image.required' => 'Please enter product image',
+            // 'image.required' => 'Please enter product image',
             'brand.required' => 'Please enter brand of product',
         ]);
 
@@ -129,13 +130,14 @@ class ProductController extends Controller
         $inputs = $request->all();
         $products->update($inputs);
         $file ;
-        if($request->hasFile('image'))
+        if($request->hasFile('image')){
         {
             $file = $request->file('image');
             $file->move('./images',$file->getClientOriginalName('image'));
         }
         $image = $file->getClientOriginalName('image');
         $products->image = $image;
+        }
         $products->save();
         return redirect('/listproducts')->with('thongbao','Just edited '. $products->name. '');
     }

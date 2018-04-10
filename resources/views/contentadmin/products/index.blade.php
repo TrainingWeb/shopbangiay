@@ -41,7 +41,7 @@
                             @foreach($products as $product)
                             <tr>
                                 <td>{{$product->id}}</td>
-                                <td><a target="_blank" href="/{{$product->id}}/{{$product->productslug}}"><b>{{$product->name}}</b></a></td>
+                                <td><a target="_blank" href="/products/{{$product->productslug}}.html"><b>{{$product->name}}</b></a></td>
                                 <td><img src="../images/{{$product->image}}" width="50"></td>
                                 {{--
                                 <td>{{$product->image}}</td> --}}

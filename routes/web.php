@@ -36,6 +36,7 @@ Route::group(['middleware'=>'adminLogin'], function () {
 
             Route::get('/deleteComment/{id}', 'CommentController@deleteComment');
 });
+Route::get('/deletecommentcustomer/{productslug}/{id}', 'CommentController@deletecommentcustomer')->name('deletecommentcustomer');
 
 Route::get('/logoutt', 'PageController@logout')->name('logoutt');
 
@@ -51,11 +52,11 @@ Route::get('/brands/{id}','PageController@getBrand');
 
 Route::get('/listproduct','PageController@getAll');
 
-Route::get('/about', 'Pagecontroller@getAbout');
+Route::get('/about', 'PageController@getAbout');
 
-Route::get('/', 'Pagecontroller@getHomepage');
+Route::get('/', 'PageController@getHomepage');
 
-Route::get('/contact', 'Pagecontroller@getContact');
+Route::get('/contact', 'PageController@getContact');
 
 Route::get('/add-to-cart/{id}', 'PageController@addTocart')->name('addtocart');
 
@@ -71,8 +72,8 @@ Route::post('/postlogin', 'PageController@postLogin');
 
 Route::get('/search', 'PageController@search');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/{productslug}/{id}', 'PageController@getDetail');
+Route::get('/products/{productslug}.html', 'PageController@getDetail');
 
 Route::post('comment/{id}', 'CommentController@postComment')->name('postComment');

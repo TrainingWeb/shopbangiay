@@ -22,10 +22,11 @@
                         @if(Session::has('cart')) @foreach($product_cart as $product)
                         <tr class="tr text-center">
                             <td><img src="/images/{{$product['item']['image']}}" width="65" height="90"></th>
-                                <td class="pt-5">{{$product['item']['name']}}</td>
+                                <td class="pt-5"><a href="/products/{{$product['item']['productslug']}}.html">{{$product['item']['name']}}</a></td>
                                 <td class="pt-5" style="font-weight:bold; font-size:20px;">${{number_format($product['item']['price'])}}</td>
                                 <td class="pt-5">
-                                    <input class="qty" type="number" name="qty" value="{{$product['qty']}}">
+                                    <input style="text-align:center; width:30px" disabled="" class="qty" type="number" name="qty" value="{{$product['qty']}}">
+                                    <a href="{{route('addtocart', $product['item']['id'])}}">+</a>
                                 </td>
                                 <td class="pt-5" style="font-weight:bold; font-size:20px;">${{number_format($product['item']['price']*$product['qty'])}}</td>
                                 <td class="pt-5">

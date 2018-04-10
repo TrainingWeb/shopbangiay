@@ -26,6 +26,7 @@
                         <a href="/brands/{{$br->id}}" class="dropdown-item text-white">
                                 {{$br->name}}
                             </a> @endforeach
+
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -34,7 +35,7 @@
                             </a>
                     <form action="/search" method="GET">
                         <input class="dropdown-menu cover-drop dropdown-menu-right pl-3" type="text" name="name" placeholder="Search...">
-                        <input type="submit" name="search" hidden>
+                        <input type="submit" hidden>
                     </form>
                 </li>
                 @if(Session::has('cart'))

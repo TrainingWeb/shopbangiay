@@ -33,7 +33,7 @@
                             <tr>
                                 <td>{{$od->id}}</td>
                                 <td>{{$od->quantity}}</td>
-                                <td>{{$od->unit_price}}</td>
+                                <td>{{number_format($od->unit_price)}}</td>
                                 <td>{{$od->id_order}}</td>
                                 <td>{{$od->id_product}} - {{$od->product->name}}</td>
                                 <td>{{$od->created_at}}</td>

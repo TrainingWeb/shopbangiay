@@ -36,7 +36,7 @@
                             @foreach($orders as $order)
                             <tr>
                                 <td>{{$order->id}}</td>
-                                <td>{{$order->total}}</td>
+                                <td>{{number_format($order->total)}}</td>
                                 <td>{{$order->user->name}}</td>
                                 <td>{{$order->created_at}}</td>
                                 <td>

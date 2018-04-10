@@ -18,7 +18,7 @@ class CommentController extends Controller
         $comment->content = $request->content;
 
         $comment->save();
-        return redirect("/$product->productslug/$request->id")->with('thongbao','You are just posted a comment');
+        return redirect("/products/$product->productslug.html")->with('thongbao','You are just posted a comment');
     }
 
     public function getIndex()
@@ -32,5 +32,12 @@ class CommentController extends Controller
         $comments = Comment::find($id);
         $comments->delete();
         return redirect('/listcomments')->with('thongbao', 'Just deleted'. $comments->id);
+    }
+
+    public function deletecommentcustomer($productslug, $id)
+    {
+        $comments = Comment::find($id);
+        $comments->delete();
+        return redirect("/products/$productslug.html")->with('thongbao', 'Just deleted your comment');
     }
 }

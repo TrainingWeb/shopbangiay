@@ -32,13 +32,17 @@ class PageController extends Controller
         return view('/pages.listproduct', compact('products', 'brands', 'title'));
     }
 
-    public function getDetail($productlug, $id)
+    public function getDetail($productslug)
     {
-        $products = Product::where('id', $id)->first();
-        $comments = Comment::where('id_product', $id)->get();
+        $products = Product::where('productslug', $productslug)->get();
+        $comments = Comment::where('id_product', $products[0]->id)->orderBy('created_at', 'DESC')->paginate(4);
+        // return $comments;
+        $productslike = Product::where([
+            ['name', 'LIKE', '%'. $products[0]->name .'%'],
+        ])->paginate(4);
         $brands = Brand::get();
-        $title = $products->name;
-        return view('pages.detail', compact('products', 'brands', 'title', 'comments'));
+        $title = $products[0]->name;
+        return view('pages.detail', compact('products', 'comments', 'productslike', 'brands', 'title'));
     }
 
     public function getBrand($id)
@@ -52,6 +56,7 @@ class PageController extends Controller
     public function getAll()
     {
         $products = Product::paginate(16);
+        // return count($products);
         $brands = Brand::get();
         $title = 'List Product';
         return view('/pages.listproduct', compact('products', 'brands', 'title'));
@@ -62,7 +67,7 @@ class PageController extends Controller
         $name = request()->input('name');
         $products = Product::where([
             ['name', 'LIKE', '%'. $name .'%'],
-        ])->get();
+        ])->paginate(16);
         $title = 'Searchingg...';
         $brands = Brand::get();
         return view('/pages.listproduct', compact('products', 'title', 'brands'));
@@ -184,11 +189,15 @@ class PageController extends Controller
         }
         else
         {
-
         }
 
         $order = New Order;
+        if(!Auth::check()){
+        $order->id_user = $user->id;
+        }
+        else{
         $order->id_user = Auth::user()->id;
+        }
         $order->total = $cart->totalPrice;
         $order->save();
         
